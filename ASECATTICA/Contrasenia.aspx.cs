@@ -34,26 +34,25 @@ namespace ASECATTICA
 
         public void Correo(string CorreoUsuario, string Encabezado, string Asunto, string Mensaje)
         {
-            System.Net.Mail.MailMessage correo = new System.Net.Mail.MailMessage();
-            correo.From = new System.Net.Mail.MailAddress("contrasenia@asecattica.com");
-            correo.To.Add(CorreoUsuario);
-            correo.Subject = Asunto;
-            correo.Body = Mensaje;
+            MailMessage correo = new MailMessage();
+            correo.To.Add(new MailAddress("gabi16rivera@gmail.com"));
+            correo.From = new MailAddress("gabi16rivera@gmail.com");
+            correo.Subject = "Asunto ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
+            correo.Body = "Cualquier contenido en <b>HTML</b> para enviarlo por correo electrónico.";
             correo.IsBodyHtml = true;
-            correo.Priority = System.Net.Mail.MailPriority.Normal;
-            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient();
-            smtp.Credentials = new NetworkCredential("gabi16rivera@gmail.com","Gaby.160491");
-            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
+            correo.Priority = MailPriority.Normal;
 
-           // smtp.Host = "correo.asecattica.com";
-            //smtp.Credentials = new System.Net.NetworkCredential("Asecattica", "Asecattica.2020");
-            
-            
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials =false;
+            smtp.Credentials = new NetworkCredential("gabi16rivera@gmail.com", "Gaby.160491");
+
             try
             {
                 smtp.Send(correo);
+                correo.Dispose();
                 lblModalTitleFinalizar.Text = Encabezado;
                 lblModalBodyFinalizar.Text = Mensaje;
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalFinalizar", "$('#myModalFinalizar').modal();", true);
