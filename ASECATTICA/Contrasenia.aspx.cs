@@ -57,7 +57,6 @@ namespace ASECATTICA
                 lblModalBodyFinalizar.Text = Mensaje;
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalFinalizar", "$('#myModalFinalizar').modal();", true);
                 UpModal2.Update();
-                TextBox1.Text = "Mensaje enviado";
             }
             catch (Exception ex)
             {

@@ -38,7 +38,7 @@
                                                 <asp:TextBox class="form-control py-4" ID="TxtCedula" runat="server"></asp:TextBox>
                                                 <%--<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Ingrese la dirección de correo electrónico" />--%>
                                                 
-                                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                                
 
                                             </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">

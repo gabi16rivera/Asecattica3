@@ -98,6 +98,7 @@
     <Content Include="Administrador.aspx" />
     <Content Include="AdmUsu.aspx" />
     <Content Include="AdmUsuAct.aspx" />
+    <Content Include="RecuperarContrasenia.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Contrasenia.aspx" />
     <Content Include="Default.aspx" />
@@ -363,6 +364,13 @@
     </Compile>
     <Compile Include="AdmUsuAct.aspx.designer.cs">
       <DependentUpon>AdmUsuAct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarContrasenia.aspx.cs">
+      <DependentUpon>RecuperarContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarContrasenia.aspx.designer.cs">
+      <DependentUpon>RecuperarContrasenia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
