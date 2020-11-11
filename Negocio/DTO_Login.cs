@@ -28,7 +28,11 @@ namespace Negocio
             return tabla;
         }
 
-        
+        public void ActualizarClaveUsu(string cedula, string clave)
+        {
+            objetoDAO.ActualizarClave(cedula, clave);
+        }
 
-}
+
+    }
 }

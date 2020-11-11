@@ -45,7 +45,7 @@
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="Login.aspx">Regresar a iniciar sesión</a>
                                                <%-- <a class="btn btn-primary" href="login.html">Restablecer la contraseña</a>--%>
-                                                <asp:Button class="btn btn-primary" ID="BtnRestablecerContrasenia" runat="server" Text="Restablecer contraseña" />
+                                                <asp:Button class="btn btn-primary" ID="BtnRestablecerContrasenia" runat="server" Text="Restablecer contraseña" OnClick="BtnRestablecerContrasenia_Click"/>
                                             </div>
  <!-- ----------------------------------- -->
   <!-- Bootstrap Modal Dialog: FINALIZAR -->

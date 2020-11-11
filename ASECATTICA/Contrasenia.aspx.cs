@@ -26,19 +26,43 @@ namespace ASECATTICA
 
             tabla = objetoDTO.ValidarCorreoUsu(TxtCedula.Text);
             string correoUsuario = tabla.Rows[0]["Correo"].ToString();
+            string cedulaUsuario = tabla.Rows[0]["Cedula"].ToString();
+
+            Correo(System.Convert.ToString(correoUsuario), "Correo electrónico enviado", "Recuperación de contraseña", 
+                "Se le ha enviado un correo a "+correoUsuario+". En el comunicado encontrará las instrucciones para hacer" +
+                " efectivo el cambio de contraseña. Si el problema persiste, por favor comuníquese con el Administrador", cedulaUsuario);
             
-            Correo(System.Convert.ToString(correoUsuario), "Encabezado ", "Asunto ", 
-                "Mensaje");
+            //Response.Redirect("Contrasenia.aspx");
+
 
         }//fin BtnRestablecerContrasenia_Click
 
-        public void Correo(string CorreoUsuario, string Encabezado, string Asunto, string Mensaje)
+        public void Correo(string CorreoUsuario, string Encabezado, string Asunto, string Mensaje, string cedulaUsuario)
         {
             MailMessage correo = new MailMessage();
-            correo.To.Add(new MailAddress("gabi16rivera@gmail.com"));
+            correo.To.Add(new MailAddress(CorreoUsuario));
             correo.From = new MailAddress("gabi16rivera@gmail.com");
-            correo.Subject = "Asunto ( " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss") + " ) ";
-            correo.Body = "Cualquier contenido en <b>HTML</b> para enviarlo por correo electrónico.";
+            correo.Subject = "Recuperación de contraseña Asecattica";
+
+            string stCuerpoHTML = "<!DOCTYPE html>";
+            stCuerpoHTML += "<html lang='es'>";
+            stCuerpoHTML += "<head>";
+            stCuerpoHTML += "<meta charset='utf - 8'>";
+            stCuerpoHTML += "</head>";
+            stCuerpoHTML += "<body>";
+            stCuerpoHTML += "<div>";
+            stCuerpoHTML += "<p>";
+            stCuerpoHTML += "Hemos recibido una solicitud para restablecer la contraseña de su cuenta asociada con esta dirección de correo electrónico, " +
+                "para hacerlo solo debe hacer clic en el siguiente enlace:";
+            stCuerpoHTML += "<br/>";
+            stCuerpoHTML += "</p>";
+            stCuerpoHTML += "<a href= https://localhost:44392/RecuperarContrasenia.aspx?cedula=" + cedulaUsuario +">";
+            stCuerpoHTML += "Restaurar Contraseña</a>";
+            stCuerpoHTML += "</div>";
+            stCuerpoHTML += "</body>";
+            stCuerpoHTML += "</html>";
+
+            correo.Body = stCuerpoHTML;
             correo.IsBodyHtml = true;
             correo.Priority = MailPriority.Normal;
 

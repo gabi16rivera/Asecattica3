@@ -41,7 +41,20 @@ namespace Datos
 
         }//fin validar correo
 
-        
+        public void ActualizarClave(string cedula, string clave)
+        {
+            SqlCommand comandoActUsu = new SqlCommand();
+            comandoActUsu.Connection = conexion.AbrirConexion();
+            comandoActUsu.CommandText = "sp_crud_TBUsuarios";
+            comandoActUsu.CommandType = CommandType.StoredProcedure;
+            comandoActUsu.Parameters.AddWithValue("@choice", "USU_MODIFICAR_CLAVE");
+            comandoActUsu.Parameters.AddWithValue("@Cedula", cedula);
+            comandoActUsu.Parameters.AddWithValue("@Clave", clave);
+            comandoActUsu.ExecuteNonQuery();
+            comandoActUsu.Parameters.Clear();
+            conexion.CerrarConexion();
+
+        }//fin actualizar usuarios
 
     }
 }
