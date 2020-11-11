@@ -27,19 +27,19 @@
                                         <form runat="server">
 <!--*****************************
     AL INICIAR EL FORM AGREGAR:-->
-            <asp:ScriptManager ID="ScriptManager2" runat="server"></asp:ScriptManager>
-<asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+            <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+<asp:UpdatePanel ID="UpdatePanel" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
 
 <!--*****************************
     CONTENIDO NORMAL DEL FORMULARIO-->
                                             <div class="form-group">
                                                <label class="small mb-1" for="inputNuevaContra">Nueva Contraseña</label>
-                                                <asp:TextBox class="form-control py-4" ID="TxtNuevaContrasenia" runat="server"></asp:TextBox>
+                                                <asp:TextBox class="form-control py-4" ID="TxtNuevaContrasenia" runat="server" TextMode="Password"></asp:TextBox>
                                                 <%--<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Ingrese la dirección de correo electrónico" />--%>
                                                 
                                                 <label class="small mb-1" for="inputConfirmarContra">Confirmar Contraseña</label>
-                                                <asp:TextBox class="form-control py-4" ID="TxtConfirmarContra" runat="server"></asp:TextBox>
+                                                <asp:TextBox class="form-control py-4" ID="TxtConfirmarContra" runat="server" TextMode="Password"></asp:TextBox>
 
                                             </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -50,21 +50,21 @@
  <!-- ----------------------------------- -->
   <!-- Bootstrap Modal Dialog: FINALIZAR -->
 
-                                <div class="modal fade" id="myModalFinalizar" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                     <div class="modal-dialog  modal-lg">
-                                        <asp:UpdatePanel ID="UpModal2" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                        <asp:UpdatePanel ID="UpModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                                             <ContentTemplate>
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">
-                                                            <asp:Label ID="lblModalTitleFinalizar" runat="server" Text=""></asp:Label></h4>
+                                                            <asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <asp:Label ID="lblModalBodyFinalizar" runat="server" Text=""></asp:Label>
+                                                        <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <%--<asp:Button ID="btnCerrar" runat="server" CssClass="btn btn-info" Text="Cerrar" data-dismiss="modal" aria-hidden="true" onClick="location.reload()"/>--%>
-                                                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="location.reload();">Finalizar</button>
+                                                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="location.reload();">OK</button>
                                                         <%--<button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cerrar</button>--%>
                                                     </div>
                                                 </div>

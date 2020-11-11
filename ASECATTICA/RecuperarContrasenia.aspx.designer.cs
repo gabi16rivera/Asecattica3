@@ -15,22 +15,22 @@ namespace ASECATTICA
     {
 
         /// <summary>
-        /// Control ScriptManager2.
+        /// Control ScriptManager.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager2;
+        protected global::System.Web.UI.ScriptManager ScriptManager;
 
         /// <summary>
-        /// Control UpdatePanel2.
+        /// Control UpdatePanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
 
         /// <summary>
         /// Control TxtNuevaContrasenia.
@@ -60,30 +60,30 @@ namespace ASECATTICA
         protected global::System.Web.UI.WebControls.Button BtnRestablecerContrasenia;
 
         /// <summary>
-        /// Control UpModal2.
+        /// Control UpModal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpModal2;
+        protected global::System.Web.UI.UpdatePanel UpModal;
 
         /// <summary>
-        /// Control lblModalTitleFinalizar.
+        /// Control lblModalTitle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModalTitleFinalizar;
+        protected global::System.Web.UI.WebControls.Label lblModalTitle;
 
         /// <summary>
-        /// Control lblModalBodyFinalizar.
+        /// Control lblModalBody.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModalBodyFinalizar;
+        protected global::System.Web.UI.WebControls.Label lblModalBody;
     }
 }
