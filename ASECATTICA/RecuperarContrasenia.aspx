@@ -23,7 +23,7 @@
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Recuperar contraseña</h3></div>
                                     <div class="card-body">
-                                        <div class="small mb-3 text-muted">Ingrese su nueva contraseña.</div>
+                                        <div class="small mb-3 text-muted">Ingrese su nueva contraseña. Debe tener al menos 8 caracteres.</div>
                                         <form runat="server">
 <!--*****************************
     AL INICIAR EL FORM AGREGAR:-->
@@ -36,15 +36,12 @@
                                             <div class="form-group">
                                                <label class="small mb-1" for="inputNuevaContra">Nueva Contraseña</label>
                                                 <asp:TextBox class="form-control py-4" ID="TxtNuevaContrasenia" runat="server" TextMode="Password"></asp:TextBox>
-                                                <%--<input class="form-control py-4" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Ingrese la dirección de correo electrónico" />--%>
-                                                
                                                 <label class="small mb-1" for="inputConfirmarContra">Confirmar Contraseña</label>
                                                 <asp:TextBox class="form-control py-4" ID="TxtConfirmarContra" runat="server" TextMode="Password"></asp:TextBox>
 
                                             </div>
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="Login.aspx">Regresar a iniciar sesión</a>
-                                               <%-- <a class="btn btn-primary" href="login.html">Restablecer la contraseña</a>--%>
                                                 <asp:Button class="btn btn-primary" ID="BtnRestablecerContrasenia" runat="server" Text="Restablecer contraseña" OnClick="BtnRestablecerContrasenia_Click"/>
                                             </div>
  <!-- ----------------------------------- -->

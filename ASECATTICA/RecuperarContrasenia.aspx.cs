@@ -27,43 +27,115 @@ namespace ASECATTICA
 
         protected void BtnRestablecerContrasenia_Click(object sender, EventArgs e)
         {
-            bool contraseniaCorrecta = false;
-
-            do
+            
+            if (ValidarContraseniaVacia() == true && ValidarContraseniaCaract() == true)
             {
-                if (TxtNuevaContrasenia.Text.Equals(TxtConfirmarContra.Text))
+                string claveEncriptada = EncriptarContraseña(TxtConfirmarContra.Text);
+                objetoDTO.ActualizarClaveUsu(System.Convert.ToString(Session["Cedula"]), claveEncriptada);
+                Mensaje("Contraseña modificada", "Se modificó correctamente la contraseña");
+                Response.Redirect("Login.aspx");
+            }
+            else {
+                limpiarForm();
+            }
+            
+        }//fin BtnRestablecerContrasenia_Click
+
+        public bool ValidarContraseniaCaract()
+        {
+            String Contenido, Titulo = "";
+            bool bandera = true;
+            Contenido = "";
+            try
+            {
+
+                if (!TxtNuevaContrasenia.Text.Equals(TxtConfirmarContra.Text))
                 {
-                    if (TxtConfirmarContra.Text.Length >= 8)
-                    {
-                        contraseniaCorrecta = true;
-                    }
-                    else
-                    {
-                        Mensaje("Advertencia", "La contraseña debe tener al menos 8 caracteres");
-                    }
+                    bandera = false;
+                    Contenido = Contenido + System.Convert.ToString("<li>Las contraseñas no son iguales.</li>");
+                }
+
+                if (TxtConfirmarContra.Text.Length < 8)
+                {
+                    bandera = false;
+                    Contenido = Contenido + System.Convert.ToString("<li>La contraseña debe tener al menos 8 caracteres.</li>");
+                }
+                                    
+                if (bandera == true)
+                {
+                    return true;
 
                 }
                 else
                 {
-                    Mensaje("Advertencia", "Las contraseñas no son iguales");
+                    Titulo = "<i class=" + "fa fa-times" + "></i>Revise la siguiente información:";
+                    lblModalTitle.Text = Titulo;
+                    lblModalBody.Text = System.Convert.ToString("<ol>") + Contenido + System.Convert.ToString("</ol>");
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                    UpModal.Update();
+                    return false;
                 }
-            } while (contraseniaCorrecta!=true);
 
-            if (contraseniaCorrecta==true)
+            }//fin try
+            catch (Exception ex)
             {
-                
-                string claveEncriptada = EncriptarContraseña(TxtConfirmarContra.Text);
-                objetoDTO.ActualizarClaveUsu(System.Convert.ToString(Session["Cedula"]), claveEncriptada);
-                Mensaje("Contraseña modificada", "Se modificó correctamente la contraseña");
-
-                //Response.Redirect("Login.aspx");
-
+                lblModalTitle.Text = "Error";
+                lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
+                return false;
             }
+        }//ValidarVacios
+
+        public bool ValidarContraseniaVacia()
+        {
+            String Contenido, Titulo = "";
+            bool bandera = true;
+            Contenido = "";
+            try
+            {
+
+                if (TxtNuevaContrasenia.Text == "")
+                {
+                    bandera = false;
+                    Contenido = Contenido + System.Convert.ToString("<li>Debe ingresar la <b>nueva contraseña</b></li>");
+                }
+
+                if (TxtConfirmarContra.Text == "")
+                {
+                    bandera = false;
+                    Contenido = Contenido + System.Convert.ToString("<li>Debe ingresar la <b>confirmación de contraseña</b></li>");
+                }
+
+
+            if (bandera == true)
+                {
+                    return true;
+
+                }
             else
             {
-                Mensaje("Error", "La contraseña no se modificó verifique nuevamente");
+                Titulo = "<i class=" + "fa fa-times" + "></i>Revise la siguiente información:";
+                lblModalTitle.Text = Titulo;
+                lblModalBody.Text = System.Convert.ToString("<ol>") + Contenido + System.Convert.ToString("</ol>");
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                UpModal.Update();
+                return false;
             }
-        }//fin BtnRestablecerContrasenia_Click
+
+        }//fin try
+            catch (Exception ex)
+            {
+                lblModalTitle.Text = "Error";
+                lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
+                return false;
+            }
+        }//ValidarVacios
+
+        private void limpiarForm()
+        {
+            TxtConfirmarContra.Text = "";
+            TxtNuevaContrasenia.Text = "";
+
+        }   //fin limpiarForm
 
         public string EncriptarContraseña(string claveOriginal)
         {
