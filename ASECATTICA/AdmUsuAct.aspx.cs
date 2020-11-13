@@ -26,8 +26,8 @@ namespace ASECATTICA
 
             Session["Seleccion"] = "";
 
-            if (IsPostBack == false) //La página no se actualiza por segunda vez
-            {
+           if (IsPostBack == false) //La página no se actualiza por segunda vez
+           {
             lblTitulo.Text = Convert.ToString(Session["Titulo"]);
                 
             //Actualizar
@@ -39,9 +39,19 @@ namespace ASECATTICA
                 TextBoxIDAsecattica.Attributes["disabled"] = "disabled";
                 lblFechaSalida.Enabled = false;
                 MostrarUsuarios();
-            }
+
+                    if (DropDownListEstado.SelectedItem.Text.Equals("ACTIVO"))
+                    {
+                        DropDownListEstado.AutoPostBack = true;
+                        TextBoxFechaSalida.Attributes["disabled"] = "disabled";
+                    }
+                    else {
+                       DropDownListEstado.AutoPostBack = true;
+                        TextBoxFechaSalida.Attributes.Remove("disabled");
+                    }
+                }
                
-                else {
+            else {
             //Nuevo     
                 BtnActualizar.Visible = false;
                 BtnEliminar.Visible = false;
@@ -49,16 +59,13 @@ namespace ASECATTICA
                 TextBoxFechaSalida.Visible = false;
                     lblFechaSalida.Visible = false;
                     MostrarDropdowList();
-
                 }
 
-            }
+           }
             
         }//fin Page_Load
 
         private void MostrarDropdowList() {
-
-            
 
             tablaRol = objeto.MostrarRol();
             //revisa todos los código de roles de TBRoles
@@ -68,7 +75,7 @@ namespace ASECATTICA
                 ListItem i;
                 foreach (DataRow r in tablaRol.Rows)
                 {
-                    i = new ListItem(r["CodigoRoles"].ToString(), r["CodigoRoles"].ToString());
+                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
                     DropDownListRol.SelectedIndex = 0;
                     DropDownListRol.Items.Add(i);
                 }
@@ -80,12 +87,12 @@ namespace ASECATTICA
             if (!IsPostBack)
             {
                 DropDownListEstado.Items.Insert(0, new ListItem("Seleccione el estado:", String.Empty));
-                ListItem i;
+                ListItem f;
                 foreach (DataRow r in tablaEstado.Rows)
                 {
-                    i = new ListItem(r["CodigoEstado"].ToString(), r["CodigoEstado"].ToString());
+                    f = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
                     DropDownListEstado.SelectedIndex = 0;
-                    DropDownListEstado.Items.Add(i);
+                    DropDownListEstado.Items.Add(f);
                 }
 
             }//fin if revisa estados
@@ -98,7 +105,7 @@ namespace ASECATTICA
                 ListItem i;
                 foreach (DataRow r in tablaUbicacion.Rows)
                 {
-                    i = new ListItem(r["CodigoUbicacion"].ToString(), r["CodigoUbicacion"].ToString());
+                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
                     DropDownListUbica.SelectedIndex = 0;
                     DropDownListUbica.Items.Add(i);
                 }
@@ -113,7 +120,7 @@ namespace ASECATTICA
                 ListItem i;
                 foreach (DataRow r in tablaCentroCosto.Rows)
                 {
-                    i = new ListItem(r["Codigo"].ToString(), r["Codigo"].ToString());
+                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
                     DropDownListCentroCosto.SelectedIndex = 0;
                     DropDownListCentroCosto.Items.Add(i);
                 }
@@ -148,7 +155,7 @@ namespace ASECATTICA
                 ListItem i;
                 foreach (DataRow r in tablaRol.Rows)
                 {
-                    i = new ListItem(r["CodigoRoles"].ToString());
+                    i = new ListItem(r["Nombre"].ToString());
                     string rol;
                     rol = tabla.Rows[0]["Rol"].ToString();
                     if (rol == i.ToString()){
@@ -175,7 +182,7 @@ namespace ASECATTICA
                ListItem i;
                 foreach (DataRow r in tablaEstado.Rows)
                 {
-                    i = new ListItem(r["CodigoEstado"].ToString());
+                    i = new ListItem(r["Nombre"].ToString());
                     string estado;
                     estado = tabla.Rows[0]["Estado"].ToString();
                     if (estado == i.ToString())
@@ -203,7 +210,7 @@ namespace ASECATTICA
                 ListItem i;
                 foreach (DataRow r in tablaUbicacion.Rows)
                 {
-                    i = new ListItem(r["CodigoUbicacion"].ToString());
+                    i = new ListItem(r["Nombre"].ToString());
                     string ubicacion;
                     ubicacion = tabla.Rows[0]["Ubicacion"].ToString();
                     if (ubicacion == i.ToString())
@@ -231,7 +238,7 @@ namespace ASECATTICA
                     ListItem i;
                     foreach (DataRow r in tablaCentroCosto.Rows)
                     {
-                        i = new ListItem(r["Codigo"].ToString());
+                        i = new ListItem(r["Nombre"].ToString());
                         string rol;
                         rol = tabla.Rows[0]["CentroCosto"].ToString();
                         if (rol == i.ToString())
@@ -336,7 +343,6 @@ namespace ASECATTICA
             return Convert.ToBase64String(hash);
         }//fin EncriptarContraseña
 
-
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
             Session["Seleccion"] = "Actualizar";
@@ -344,7 +350,6 @@ namespace ASECATTICA
 
         }//fin BtnActualizar_Click
 
-        
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
             Session["Seleccion"] = "Eliminar";
@@ -545,7 +550,6 @@ namespace ASECATTICA
 
         }//fin validar textbox
         
-        
         public void Mensaje (string titulo, string contenido)
         {
             try
@@ -609,5 +613,20 @@ namespace ASECATTICA
         {
             Response.Redirect("~/AdmUsu.aspx");
         }
+
+        protected void DropDownListEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (DropDownListEstado.SelectedItem.Text.Equals("ACTIVO"))
+            {
+                DropDownListEstado.AutoPostBack = true;
+                TextBoxFechaSalida.Attributes["disabled"] = "disabled";
+
+            }
+            else {
+                DropDownListEstado.AutoPostBack = true;
+                TextBoxFechaSalida.Attributes.Remove("disabled");
+            }
+
+        }//fin DropDownListEstado_SelectedIndexChanged
     }
 }

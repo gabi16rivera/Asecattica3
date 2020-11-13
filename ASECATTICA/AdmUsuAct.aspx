@@ -206,7 +206,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputEstado<">Estado</label>
-                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="py-3" Width="100%">
+                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="py-3" Width="100%" OnSelectedIndexChanged="DropDownListEstado_SelectedIndexChanged" AutoPostBack="true">
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
