@@ -13,6 +13,13 @@ namespace Negocio
         
         private DAO_Usuarios objetoDAO = new DAO_Usuarios();
 
+        public int ValidarUsuEliminado(string ID_Asecattica)
+        {
+            int datoretornoID = objetoDAO.ValidarUsuarioEliminado(ID_Asecattica);
+
+            return datoretornoID;
+        }
+
         public int ValidarIDAse(string ID_Asecattica)
         {
             int datoretornoID = objetoDAO.ValidarIDAsecattica(ID_Asecattica);

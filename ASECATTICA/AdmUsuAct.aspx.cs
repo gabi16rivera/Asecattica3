@@ -23,7 +23,9 @@ namespace ASECATTICA
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+            Session["Seleccion"] = "";
+
             if (IsPostBack == false) //La página no se actualiza por segunda vez
             {
             lblTitulo.Text = Convert.ToString(Session["Titulo"]);
@@ -35,8 +37,8 @@ namespace ASECATTICA
                 BtnEliminar.Visible = true;
                 BtnAgregar.Visible = false;
                 TextBoxIDAsecattica.Attributes["disabled"] = "disabled";
-                    lblFechaSalida.Enabled = false;
-                    MostrarUsuarios();
+                lblFechaSalida.Enabled = false;
+                MostrarUsuarios();
             }
                
                 else {
@@ -45,7 +47,8 @@ namespace ASECATTICA
                 BtnEliminar.Visible = false;
                 BtnAgregar.Visible = true;
                 TextBoxFechaSalida.Visible = false;
-                MostrarDropdowList();
+                    lblFechaSalida.Visible = false;
+                    MostrarDropdowList();
 
                 }
 
@@ -54,6 +57,8 @@ namespace ASECATTICA
         }//fin Page_Load
 
         private void MostrarDropdowList() {
+
+            
 
             tablaRol = objeto.MostrarRol();
             //revisa todos los código de roles de TBRoles
@@ -334,60 +339,69 @@ namespace ASECATTICA
 
         protected void BtnActualizar_Click(object sender, EventArgs e)
         {
-            try {
+            Session["Seleccion"] = "Actualizar";
+            MensajeValidarAccion("Advertencia", "¿Esta seguro que desea actualizar el usuario?");
 
-                //MensajeButton("Advertencia", "¿Esta seguro que desea actualizar el usuario?");
-
-                if (ValidarVacios() == true)
-                {
-                    string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
-                    objetoDTO.ActualizarUsu(TextBoxIDAsecattica.Text, TextBoxCedula.Text, DropDownListUbica.Text, TextBoxNombre.Text, 
-                    TextBoxApellido1.Text, TextBoxApellido2.Text,
-                    DropDownListRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
-                    TextBoxEdad.Text, TextBoxDireccion.Text, TextBoxSexo.Text, TextBoxFechaIngreso.Text, TextBoxFechaSalida.Text,
-                    claveEncriptada);
-
-                    Mensaje("Usuario actualizado", "El usuario se actualizó en base de datos sin problemas");
-                    //Response.Redirect("AdmUsu.aspx");
-                }
-                
-            }
-            
-            catch (Exception ex)
-            {
-                lblModalTitle.Text = "Error";
-                lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
-
-            }
-            //finally
-            //{
-            //    Response.Redirect("AdmUsu.aspx");
-           // }
         }//fin BtnActualizar_Click
 
-        protected void btnCerrar_Click(object sender, EventArgs e) { 
         
-        }
-
-
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
-            try { 
-            objetoDTO.EliminarUsu(TextBoxIDAsecattica.Text);
-            Mensaje("Usuario eliminado", "El usuario se eliminó en base de datos sin problemas");
-            //Response.Redirect("AdmUsu.aspx");
-            }
-
-            catch (Exception ex)
-            {
-                lblModalTitle.Text = "Error";
-                lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
-                
-            }
-
+            Session["Seleccion"] = "Eliminar";
+            MensajeValidarAccion("Advertencia","¿Está seguro que desea eliminar el usuario?");
         }
 
-        
+        protected void BtnSi_Click(object sender, EventArgs e)
+        {
+            if (Session["Seleccion"].Equals("Eliminar"))
+            {
+
+                try
+                {
+                    objetoDTO.EliminarUsu(TextBoxIDAsecattica.Text);
+                    if (objetoDTO.ValidarUsuEliminado(TextBoxIDAsecattica.Text) == 0)
+                    {
+                        MensajeRegresar("Usuario eliminado", "El usuario se eliminó en base de datos sin problemas.");
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    lblModalTitle.Text = "Error";
+                    lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
+
+                }
+
+            }//fin session eliminar
+            else {
+                //Session["Seleccion"] es igual a ("Actualizar")
+                try
+                {
+                    if (ValidarVacios() == true)
+                    {
+                        string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
+                        objetoDTO.ActualizarUsu(TextBoxIDAsecattica.Text, TextBoxCedula.Text, DropDownListUbica.Text, TextBoxNombre.Text,
+                        TextBoxApellido1.Text, TextBoxApellido2.Text,
+                        DropDownListRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
+                        TextBoxEdad.Text, TextBoxDireccion.Text, TextBoxSexo.Text, TextBoxFechaIngreso.Text, TextBoxFechaSalida.Text,
+                        claveEncriptada);
+
+                        MensajeRegresar("Usuario actualizado", "El usuario se actualizó en base de datos sin problemas");
+                    }
+
+                }
+
+                catch (Exception ex)
+                {
+                    lblModalTitle.Text = "Error";
+                    lblModalBody.Text = "Se ha producido un error, por favor reportelo con el siguiente detalle: " + ex.Message;
+
+                }
+
+            }//fin session actualizar
+
+        }//BtnSi_Click
+
         public bool ValidarVacios()
         {
             String Contenido, Titulo = "";
@@ -552,6 +566,48 @@ namespace ASECATTICA
 
         }//fin mensaje
 
-        
+        public void MensajeValidarAccion(string titulo2, string contenido2)
+        {
+            try
+            {
+                lblModalTitleValida.Text = titulo2;
+                lblModalBodyValida.Text = contenido2;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalValida", "$('#myModalValida').modal();", true);
+                upModalValida.Update();
+            }
+            
+            catch (Exception ex)
+            {
+                lblModalTitleValida.Text = "Error: ";
+                lblModalBodyValida.Text = ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                upModalValida.Update();
+            }
+
+        }//fin mensaje
+
+        public void MensajeRegresar(string titulo, string contenido)
+        {
+            try
+            {
+                lblModalTitleRegresar.Text = titulo;
+                lblModalBodyRegresar.Text = contenido;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalRegresar", "$('#myModalRegresar').modal();", true);
+                upModalRegresar.Update();
+            }
+
+            catch (Exception ex)
+            {
+                lblModalTitleValida.Text = "Error: ";
+                lblModalBodyValida.Text = ex.Message;
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModalRegresar", "$('#myModalRegresar').modal();", true);
+                upModalRegresar.Update();
+            }
+
+        }//fin mensaje
+        protected void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AdmUsu.aspx");
+        }
     }
 }

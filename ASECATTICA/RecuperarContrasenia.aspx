@@ -61,7 +61,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <%--<asp:Button ID="btnCerrar" runat="server" CssClass="btn btn-info" Text="Cerrar" data-dismiss="modal" aria-hidden="true" onClick="location.reload()"/>--%>
-                                                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="location.reload();">OK</button>
+                                                        <button class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="location.reload();">Aceptar</button>
                                                         <%--<button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cerrar</button>--%>
                                                     </div>
                                                 </div>

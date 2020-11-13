@@ -12,6 +12,26 @@ namespace Datos
 
         private DAO_Conexion conexion = new DAO_Conexion();
 
+        public int ValidarUsuarioEliminado(string ID_Asecattica)
+        {
+            SqlCommand comandoActUsu = new SqlCommand();
+            comandoActUsu.Connection = conexion.AbrirConexion();
+            comandoActUsu.CommandText = "sp_crud_TBUsuarios";
+            comandoActUsu.CommandType = CommandType.StoredProcedure;
+            comandoActUsu.Parameters.AddWithValue("@choice", "VALIDA_USU_ELIMINADO");
+            comandoActUsu.Parameters.AddWithValue("@ID_Asecattica", ID_Asecattica);
+            if (comandoActUsu.ExecuteScalar()==null)
+            {
+                return 0;
+
+            }
+            else
+            {
+                return (int)comandoActUsu.ExecuteScalar();
+            }
+
+        }
+
         public int ValidarIDAsecattica(string ID_Asecattica)
         {
             SqlCommand comandoActUsu = new SqlCommand();

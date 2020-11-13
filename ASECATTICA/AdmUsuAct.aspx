@@ -20,20 +20,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-    <style>
-    .bs-example{
-    	margin: 20px;
-        position: relative;
-    }
-</style>
-<script>
-    $(document).ready(function(){
-        $(".show-toast").click(function(){
-            $("#myToast").toast('show');
-        });
-    });
-</script>
 </head>
 <body class="sb-sidenav-toggled">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -129,9 +115,6 @@
                     <div class="sb-sidenav-footer">
                         <div class="small">Logeado como:</div>
                        Administrador
-                            
-                        
-                        
                     </div>
                 </nav>
             </div>
@@ -158,7 +141,6 @@
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
-
 <!--*****************************
     CONTENIDO NORMAL DEL FORMULARIO-->
                                             <div class="form-row" runat="server" >
@@ -317,34 +299,8 @@
                                             <asp:Button ID="BtnActualizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click"/>
                                             <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click"/>
                                
-    
-    
-<!--***************************** -->
 
-
-
-    <div class="bs-example" style="position:relative;">
-	<p><strong>Note:</strong> By default toasts will automatically hide if you do not set autohide to false.</p>
-	
-	<button type="button" class="btn btn-primary show-toast">Show Toast</button>
-    <div class="toast" id="myToast" style="position: absolute; top: 0; right: 0;">
-        <div class="toast-header">
-            <strong class="mr-auto"><i class="fa fa-grav"></i> We miss you!</strong>
-            <small>11 mins ago</small>
-            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="toast-body">
-            <div>It's been a long time since you visited us. We've something special for you. <a href="#">Click here!</a></div>
-        </div>
-    </div>
-</div>
-
-
-
-<!--*****************************
-    ANTES LOS MODALES NECESARIOS AQUI -->
+    <!-- ANTES LOS MODALES NECESARIOS AQUI -->
                                             <!-- Bootstrap Modal Dialog: NOTIFICACIONES -->
                                 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
                                     <div class="modal-dialog  modal-lg">
@@ -362,18 +318,68 @@
                                                     <div class="modal-body">
                                                         <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
                                                     </div>
-                                                    <%--<div class="modal-footer">--%>
-                                                        <%--<asp:Button ID="btnCerrar" runat="server" CssClass="btn btn-info" Text="Cerrar" data-dismiss="modal" aria-hidden="true" onClick="location.reload()"/>--%>
-                                                        <%--<button class="btn btn-info" data-dismiss="modal" aria-hidden="true" onclick="location.reload();">Cerrar</button>--%>
-                                                       <%-- <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cerrar</button>--%>
-                                                   <%-- </div>--%>
+                                                   <div class="modal-footer">
+                                                       <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                                   </div>
                                                 </div>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
                                 </div> <%--fin de modal--%>
 
+      <!-- Bootstrap Modal Dialog: VALIDAR RESPUESTA -->
+                                <div class="modal fade" id="myModalValida" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
+                                    <div class="modal-dialog  modal-lg">
+                                        <asp:UpdatePanel ID="upModalValida" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">
+                                                            <asp:Label ID="lblModalTitleValida" runat="server" Text=""></asp:Label></h4>
+                                                            <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>--%>
+                                                            
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:Label ID="lblModalBodyValida" runat="server" Text=""></asp:Label>
+                                                    </div>
+                                                   <div class="modal-footer">
+                                                  <asp:Button ID="BtnSi" runat="server" CssClass="btn btn-info" Text="Si" data-dismiss="modal" aria-hidden="true" OnClick="BtnSi_Click" UseSubmitBehavior="false"/>
+                                                    <asp:Button ID="BtnNo" runat="server" CssClass="btn btn-info" Text="No" data-dismiss="modal" aria-hidden="true"/>   
+                                                   </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div> <%--fin de modal--%>
 
+    <!-- ANTES LOS MODALES NECESARIOS AQUI -->
+                                            <!-- Bootstrap Modal Dialog: REGRESAR -->
+                                <div class="modal fade" id="myModalRegresar" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
+                                    <div class="modal-dialog  modal-lg">
+                                        <asp:UpdatePanel ID="upModalRegresar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">
+                                                            <asp:Label ID="lblModalTitleRegresar" runat="server" Text=""></asp:Label></h4>
+                                                            <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>--%>
+                                                            
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:Label ID="lblModalBodyRegresar" runat="server" Text=""></asp:Label>
+                                                    </div>
+                                                   <div class="modal-footer">
+                                                       <asp:Button ID="BtnRegresar" runat="server" CssClass="btn btn-info" Text="Regresar" data-dismiss="modal" aria-hidden="true" UseSubmitBehavior="false" OnClick="BtnRegresar_Click"/>
+                                                   </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div> <%--fin de modal--%>
 <!--*****************************
     ANTES DEL CIERRE DEL FORM AGREGAR: -->
     <!--AGREGAR LOS BOTONES QUE HACEN ALGUN EVENTO: CLICK, TEXTCHANGE,SELECTEDINDEXCHANGE U OTROS -->
@@ -381,6 +387,8 @@
 </ContentTemplate>
 <Triggers>
     <asp:AsyncPostBackTrigger ControlID="BtnActualizar" EventName="Click" />
+    <asp:AsyncPostBackTrigger ControlID="BtnSi" EventName="Click" />
+    <asp:AsyncPostBackTrigger ControlID="BtnEliminar" EventName="Click" />
 </Triggers>
 </asp:UpdatePanel>
                                             </form>
