@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>Adm Usuarios</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>
@@ -38,7 +38,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Salir</a>
+                        <a class="dropdown-item" href="Login.aspx">Salir</a>
                     </div>
                 </li>
             </ul>
@@ -51,7 +51,7 @@
                             <%--<div class="sb-sidenav-menu-heading">Core</div>--%>
                             <a class="nav-link" href="Administrador.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Administrador de Usuarios
                             </a>
                             <form runat="server"> 
                             
@@ -114,7 +114,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Administrador de Usuarios</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
@@ -138,12 +138,12 @@
                             <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" />
                             <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" />
                             <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                            <asp:BoundField DataField="FechaNacim" HeaderText="FechaNacim" SortExpression="FechaNacim" />
+                            <asp:BoundField DataField="FechaNacim" DataFormatString="{0:d}" HeaderText="FechaNacim" SortExpression="FechaNacim" />
                             <asp:BoundField DataField="Edad" HeaderText="Edad" SortExpression="Edad" />
                             <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
                             <asp:BoundField DataField="Sexo" HeaderText="Sexo" SortExpression="Sexo" />
-                            <asp:BoundField DataField="FechaIngreso" HeaderText="FechaIngreso" SortExpression="FechaIngreso" />
-                            <asp:BoundField DataField="FechaSalida" HeaderText="FechaSalida" SortExpression="FechaSalida" />
+                            <asp:BoundField DataField="FechaIngreso" HeaderText="FechaIngreso" DataFormatString="{0:d}" SortExpression="FechaIngreso" />
+                            <asp:BoundField DataField="FechaSalida" HeaderText="FechaSalida" DataFormatString="{0:d}" SortExpression="FechaSalida" />
                         </Columns>
                         <EditRowStyle BackColor="#999999" />
                         <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />

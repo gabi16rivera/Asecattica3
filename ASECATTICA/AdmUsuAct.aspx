@@ -43,7 +43,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Salir</a>
+                        <a class="dropdown-item" href="Login.aspx">Salir</a>
                     </div>
                 </li>
             </ul>
@@ -164,7 +164,8 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUbicacion">Ubicación</label>
                                                    
-                                                        <asp:DropDownList ID="DropDownListUbica" runat="server" class="py-3" Width="100%">
+                                                        <%--<asp:DropDownList ID="DropDownListUbica" runat="server" class="py-3" Width="100%">--%>
+                                                        <asp:DropDownList ID="DropDownListUbica" runat="server" class="custom-select" Width="100%" style="height: 50px">
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -196,7 +197,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputRol">Rol</label>  
-                                                        <asp:DropDownList ID="DropDownListRol" runat="server" class="py-3" Width="100%">
+                                                        <asp:DropDownList ID="DropDownListRol" runat="server" class="custom-select" style="height: 50px" Width="100%">
                                                             
                                                         </asp:DropDownList>
                                                     </div>
@@ -206,7 +207,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputEstado<">Estado</label>
-                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="py-3" Width="100%" OnSelectedIndexChanged="DropDownListEstado_SelectedIndexChanged" AutoPostBack="true">
+                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="custom-select" style="height: 50px" Width="100%" OnSelectedIndexChanged="DropDownListEstado_SelectedIndexChanged" AutoPostBack="true">
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -231,7 +232,7 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputCentroCosto<">Centro de costo</label>
                                                  
-                                                        <asp:DropDownList ID="DropDownListCentroCosto" runat="server" class="py-3" Width="100%">
+                                                        <asp:DropDownList ID="DropDownListCentroCosto" runat="server" class="custom-select" Width="100%" style="height: 50px">
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -286,7 +287,7 @@
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <asp:Label ID="lblFechaSalida" class="small mb-1" runat="server" Text="Fecha de Salida"></asp:Label>
+                                                        <asp:Label ID="lblFechaSalida" runat="server" Text="Fecha de Salida" style="font-size: 13px" ></asp:Label>
                                                         
                                                         <asp:TextBox ID="TextBoxFechaSalida"  runat="server" class="form-control py-4" TextMode="Date"></asp:TextBox>
                                                     </div>
