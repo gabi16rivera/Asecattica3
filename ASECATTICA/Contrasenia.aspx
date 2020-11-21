@@ -49,17 +49,17 @@
  <!-- ----------------------------------- -->
   <!-- Bootstrap Modal Dialog: FINALIZAR -->
 
-                                <div class="modal fade" id="myModalFinalizar" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                                <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
                                     <div class="modal-dialog  modal-lg">
-                                        <asp:UpdatePanel ID="UpModal2" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                        <asp:UpdatePanel ID="UpModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                                             <ContentTemplate>
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h4 class="modal-title">
-                                                            <asp:Label ID="lblModalTitleFinalizar" runat="server" Text=""></asp:Label></h4>
+                                                            <asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <asp:Label ID="lblModalBodyFinalizar" runat="server" Text=""></asp:Label>
+                                                        <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <%--<asp:Button ID="btnCerrar" runat="server" CssClass="btn btn-info" Text="Cerrar" data-dismiss="modal" aria-hidden="true" onClick="location.reload()"/>--%>

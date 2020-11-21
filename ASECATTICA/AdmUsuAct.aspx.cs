@@ -68,6 +68,37 @@ namespace ASECATTICA
         private void MostrarDropdowList() {
 
             tablaRol = objeto.MostrarRol();
+
+            //revisa todos los código de roles de TBRoles
+            if (!IsPostBack)
+            {
+                ListBoxRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
+                ListItem i;
+                foreach (DataRow r in tablaRol.Rows)
+                {
+                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
+                    ListBoxRol.SelectedIndex = 0;
+                    ListBoxRol.Items.Add(i);
+                }
+
+            }//fin if revisa roles
+            //-----------------------------------------------
+            //revisa todos los código de roles de TBRoles
+           /* if (!IsPostBack)
+            {
+                CheckBoxListRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
+                ListItem i;
+                foreach (DataRow r in tablaRol.Rows)
+                {
+                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
+                    CheckBoxListRol.SelectedIndex = 0;
+                    CheckBoxListRol.Items.Add(i);
+                }
+
+            }//fin if revisa roles*/
+
+
+            //----------------------------------------------
             //revisa todos los código de roles de TBRoles
             if (!IsPostBack)
             {

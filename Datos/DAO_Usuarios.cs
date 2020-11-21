@@ -38,7 +38,7 @@ namespace Datos
             comandoActUsu.Connection = conexion.AbrirConexion();
             comandoActUsu.CommandText = "sp_crud_TBUsuarios";
             comandoActUsu.CommandType = CommandType.StoredProcedure;
-            comandoActUsu.Parameters.AddWithValue("@choice", "VALIDAR");
+            comandoActUsu.Parameters.AddWithValue("@choice", "VALIDAR_IDASECATTICA");
             comandoActUsu.Parameters.AddWithValue("@ID_Asecattica", ID_Asecattica);
 
             return (int)comandoActUsu.ExecuteScalar();

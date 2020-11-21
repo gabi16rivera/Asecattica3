@@ -20,6 +20,20 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+        rel="stylesheet" type="text/css" />
+    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+        type="text/javascript"></script>
+    
+<script type="text/javascript">
+    $(function () {
+        $('[id*=ListBox1]').multiselect({
+            includeSelectAllOption: true
+        });
+    });
+</script>
+
 </head>
 <body class="sb-sidenav-toggled">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -164,7 +178,6 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputUbicacion">Ubicación</label>
                                                    
-                                                        <%--<asp:DropDownList ID="DropDownListUbica" runat="server" class="py-3" Width="100%">--%>
                                                         <asp:DropDownList ID="DropDownListUbica" runat="server" class="custom-select" Width="100%" style="height: 50px">
                                                         </asp:DropDownList>
                                                     </div>
@@ -197,6 +210,22 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputRol">Rol</label>  
+                                                        <%--<asp:CheckBoxList ID="CheckBoxListRol" class="custom-select" style="height: 250px" Width="100%" runat="server">
+
+                                                        </asp:CheckBoxList>--%>
+
+                                                        <asp:ListBox ID="ListBoxRol" runat="server" SelectionMode="Multiple" AutoPostBack="True">
+
+                                                        </asp:ListBox>
+
+                                                         <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple">
+                                                             <asp:ListItem Text = "Mango" Value = "1" />
+    <asp:ListItem Text = "Apple" Value = "2" />
+    <asp:ListItem Text = "Banana" Value = "3" />
+    <asp:ListItem Text = "Guava" Value = "4" />
+    <asp:ListItem Text = "Orange" Value = "5" />
+                                                        </asp:ListBox>
+
                                                         <asp:DropDownList ID="DropDownListRol" runat="server" class="custom-select" style="height: 50px" Width="100%">
                                                             
                                                         </asp:DropDownList>

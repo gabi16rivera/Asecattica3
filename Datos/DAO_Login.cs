@@ -24,6 +24,19 @@ namespace Datos
 
         }//validar login
 
+        public int ValidarCedula(string cedula)
+        {
+            SqlCommand comandoValidar = new SqlCommand();
+            comandoValidar.Connection = conexion.AbrirConexion();
+            comandoValidar.CommandText = "sp_crud_TBUsuarios";
+            comandoValidar.CommandType = CommandType.StoredProcedure;
+            comandoValidar.Parameters.AddWithValue("@choice", "VALIDAR_CEDULA");
+            comandoValidar.Parameters.AddWithValue("@Cedula", cedula);
+
+            return (int)comandoValidar.ExecuteScalar();
+
+        }//validar login
+
         public DataTable ValidarCorreo(string cedula)
         {
             DataTable tabla = new DataTable();
