@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ASECATTICA
 {
@@ -53,32 +55,36 @@ namespace ASECATTICA
                
             else {
             //Nuevo     
+
                 BtnActualizar.Visible = false;
                 BtnEliminar.Visible = false;
                 BtnAgregar.Visible = true;
                 TextBoxFechaSalida.Visible = false;
                     lblFechaSalida.Visible = false;
                     MostrarDropdowList();
+                    
                 }
 
            }
-            
+
+
         }//fin Page_Load
 
         private void MostrarDropdowList() {
 
             tablaRol = objeto.MostrarRol();
 
+            
             //revisa todos los código de roles de TBRoles
             if (!IsPostBack)
             {
-                ListBoxRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
+                //ListBox1.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
                 ListItem i;
                 foreach (DataRow r in tablaRol.Rows)
                 {
                     i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
-                    ListBoxRol.SelectedIndex = 0;
-                    ListBoxRol.Items.Add(i);
+                   // ListBox1.SelectedIndex = 0;
+                    ListBox1.Items.Add(i);
                 }
 
             }//fin if revisa roles

@@ -62,6 +62,23 @@ namespace Datos
 
         }
 
+        public SqlDataReader MostrarListItem()
+        {
+            DataTable tablaRol = new DataTable();
+            SqlDataReader leerRol;
+            SqlCommand comandoRol = new SqlCommand();
+            comandoRol.Connection = conexion.AbrirConexion();
+            comandoRol.CommandText = "sp_crud_TBRoles";
+            comandoRol.Parameters.AddWithValue("@choice", "Select");
+            comandoRol.CommandType = CommandType.StoredProcedure;
+            leerRol = comandoRol.ExecuteReader();
+
+
+
+            return leerRol;
+
+        }
+
         public DataTable MostrarRoles()
         {
             DataTable tablaRol = new DataTable();

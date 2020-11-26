@@ -12,31 +12,19 @@
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>
+      <%--  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>--%>
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-<link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
-        rel="stylesheet" type="text/css" />
-    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
-        type="text/javascript"></script>
     
-<script type="text/javascript">
-    $(function () {
-        $('[id*=ListBox1]').multiselect({
-            includeSelectAllOption: true
-        });
-    });
-</script>
+ 
+    
+
+      
 
 </head>
 <body class="sb-sidenav-toggled">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+         
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Asecattica</a>
 
 
@@ -150,6 +138,7 @@
                                         <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label></h3></div>
                                     <div class="card-body">
                                         <form runat="server">
+                                          
 <!--*****************************
     AL INICIAR EL FORM AGREGAR:-->
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
@@ -158,6 +147,7 @@
 <!--*****************************
     CONTENIDO NORMAL DEL FORMULARIO-->
                                             <div class="form-row" runat="server" >
+                                               
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputIDAsecattica">IDAsecattica</label>
@@ -207,28 +197,18 @@
                                                         <asp:TextBox ID="TextBoxApellido2"  runat="server" class="form-control py-4"></asp:TextBox>
                                                     </div>
                                                 </div>
+                                                
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputRol">Rol</label>  
-                                                        <%--<asp:CheckBoxList ID="CheckBoxListRol" class="custom-select" style="height: 250px" Width="100%" runat="server">
-
-                                                        </asp:CheckBoxList>--%>
-
-                                                        <asp:ListBox ID="ListBoxRol" runat="server" SelectionMode="Multiple" AutoPostBack="True">
-
-                                                        </asp:ListBox>
-
-                                                         <asp:ListBox ID="ListBox1" runat="server" SelectionMode="Multiple">
-                                                             <asp:ListItem Text = "Mango" Value = "1" />
-    <asp:ListItem Text = "Apple" Value = "2" />
-    <asp:ListItem Text = "Banana" Value = "3" />
-    <asp:ListItem Text = "Guava" Value = "4" />
-    <asp:ListItem Text = "Orange" Value = "5" />
-                                                        </asp:ListBox>
-
+                                                        
                                                         <asp:DropDownList ID="DropDownListRol" runat="server" class="custom-select" style="height: 50px" Width="100%">
                                                             
                                                         </asp:DropDownList>
+
+                                                        <asp:ListBox ID="ListBox1" SelectionMode="Multiple" runat="server"></asp:ListBox>
+
+
                                                     </div>
                                                 </div>
                                             </div> <%--Fin del form-row--%>
@@ -451,16 +431,40 @@
             
 
         </div>
+
+    
+
+
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" ></script>
+        <%--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" ></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" ></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
-        <script src="assets/demo/datatables-demo.js"></script>
+        <script src="assets/demo/datatables-demo.js"></script>--%>
            
+
+        
+    <script type="text/javascript">
+        $(function () {
+            $('#ListBox1').multiselect({
+                includeSelectAllOption: false,
+                //placeholder: 'Select Languages'
+                nonSelectedText: "Seleccione una opción"
+            });
+        });
+
+    </script>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/css/bootstrap-multiselect.css" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/js/bootstrap-multiselect.js"></script>
+     
+
      <%--</form>--%>
     </body>
 </html>
