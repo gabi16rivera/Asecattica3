@@ -12,8 +12,10 @@
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
-      <%--  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>--%>
+
+    <%-- Hace que aparezca el menú desplegable de la página --%>
+      <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>
 
     
  
@@ -202,11 +204,16 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputRol">Rol</label>  
                                                         
-                                                        <asp:DropDownList ID="DropDownListRol" runat="server" class="custom-select" style="height: 50px" Width="100%">
+                                                        <%--<asp:DropDownList ID="DropDownListRol" runat="server" class="custom-select" style="height: 50px" Width="100%">
                                                             
-                                                        </asp:DropDownList>
+                                                        </asp:DropDownList>--%>
 
-                                                        <asp:ListBox ID="ListBox1" SelectionMode="Multiple" runat="server"></asp:ListBox>
+                                                        <div>
+                                                            <asp:ListBox ID="ListBoxRol" SelectionMode="Multiple" runat="server" >
+
+                                                        </asp:ListBox>
+
+                                                        </div>
 
 
                                                     </div>
@@ -216,7 +223,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputEstado<">Estado</label>
-                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="custom-select" style="height: 50px" Width="100%" OnSelectedIndexChanged="DropDownListEstado_SelectedIndexChanged" AutoPostBack="true">
+                                                        <asp:DropDownList ID="DropDownListEstado" runat="server" class="custom-select" style="height: 50px" Width="100%" OnSelectedIndexChanged="DropDownListEstado_SelectedIndexChanged" >
                                                         </asp:DropDownList>
                                                     </div>
                                                 </div>
@@ -434,29 +441,30 @@
 
     
 
-
+    <%-- Script para que el menú se despliegue --%>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
-        <%--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" ></script>
+       <%--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" ></script>--%>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" ></script>
         <script src="assets/demo/chart-area-demo.js"></script>
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" ></script>
-        <script src="assets/demo/datatables-demo.js"></script>--%>
+        <script src="assets/demo/datatables-demo.js"></script>
            
 
-        
+      <%-- Script para seleccionar el rol del usuario nuevo --%>  
     <script type="text/javascript">
         $(function () {
-            $('#ListBox1').multiselect({
+            $('#ListBoxRol').multiselect({
                 includeSelectAllOption: false,
-                //placeholder: 'Select Languages'
-                nonSelectedText: "Seleccione una opción"
+                nonSelectedText: "Seleccione el rol"
             });
         });
 
     </script>  
+
+    <%-- Enlaces para que el script de roles funcione --%>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.16/css/bootstrap-multiselect.css" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

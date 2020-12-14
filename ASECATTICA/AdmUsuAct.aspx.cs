@@ -75,16 +75,14 @@ namespace ASECATTICA
             tablaRol = objeto.MostrarRol();
 
             
-            //revisa todos los código de roles de TBRoles
+            //revisa y muestra todos los código de roles de TBRoles que vienen de Base de datos
             if (!IsPostBack)
             {
-                //ListBox1.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
                 ListItem i;
                 foreach (DataRow r in tablaRol.Rows)
                 {
                     i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
-                   // ListBox1.SelectedIndex = 0;
-                    ListBox1.Items.Add(i);
+                    ListBoxRol.Items.Add(i);
                 }
 
             }//fin if revisa roles
@@ -105,19 +103,19 @@ namespace ASECATTICA
 
 
             //----------------------------------------------
-            //revisa todos los código de roles de TBRoles
-            if (!IsPostBack)
-            {
-                DropDownListRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
-                ListItem i;
-                foreach (DataRow r in tablaRol.Rows)
-                {
-                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
-                    DropDownListRol.SelectedIndex = 0;
-                    DropDownListRol.Items.Add(i);
-                }
+            ////revisa todos los código de roles de TBRoles
+            //if (!IsPostBack)
+            //{
+            //    DropDownListRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
+            //    ListItem i;
+            //    foreach (DataRow r in tablaRol.Rows)
+            //    {
+            //        i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
+            //        DropDownListRol.SelectedIndex = 0;
+            //        DropDownListRol.Items.Add(i);
+            //    }
 
-            }//fin if revisa roles
+            //}//fin if revisa roles
 
             tablaEstado = objeto.MostrarEstado();
             //revisa todos los código de estados de TBEstados
@@ -202,16 +200,31 @@ namespace ASECATTICA
                     {
                         contador = contador + 1;
                     }
-                    DropDownListRol.Items.Add(i);
-                    DropDownListRol.DataSource = tablaRol;
+                        ListBoxRol.Items.Add(i);
+                        ListBoxRol.DataSource = tablaRol;
                 }//fin foreach
 
-                DropDownListRol.SelectedIndex = indice;
-                DropDownListRol.SelectedItem.Text = DropDownListRol.SelectedItem.Text;
-            }//fin if revisa roles
+                //Compara la tabla de roles con los roles seleccionados del usuario
+                    string cadenaRoles = tabla.Rows[0]["Rol"].ToString();
+                    string[] partes = new string[ListBoxRol.Items.Count];
+                    partes = cadenaRoles.Split(','); 
+                    contador = 0;
+                    do
+                    {
+                        foreach (ListItem item in ListBoxRol.Items)
+                        {
+                            if (item.Value == partes[contador])
+                            {
+                                item.Selected = true;
+                            }
+                        }
+                        contador++;
+                    } while (contador!=partes.Length);
 
-            //revisa todos los código de estados de TBEstados
-            if (!IsPostBack)
+                }//fin if revisa roles
+
+                //revisa todos los código de estados de TBEstados
+                if (!IsPostBack)
             {
                 int indice, contador;
                 indice = -1;
@@ -293,8 +306,7 @@ namespace ASECATTICA
                     DropDownListCentroCosto.SelectedIndex = indice;
                     DropDownListCentroCosto.SelectedItem.Text = DropDownListCentroCosto.SelectedItem.Text;
                 }//fin if revisa centro de costos
-
-                TextBoxCorreo.Text = tabla.Rows[0]["Correo"].ToString();
+            TextBoxCorreo.Text = tabla.Rows[0]["Correo"].ToString();
             TextBoxClave.Text = tabla.Rows[0]["Clave"].ToString();
             TextBoxTelefono.Text = tabla.Rows[0]["Telefono"].ToString();
 
@@ -314,8 +326,15 @@ namespace ASECATTICA
             }//fin if tabla counts mayor a cero
         }//fin método mostrar usuarios
 
+
+        
+
+        
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
+
+
+
             int retornoID = objeto.ValidarIDAse(TextBoxIDAsecattica.Text);
             bool banderaID = false;
 
@@ -331,10 +350,63 @@ namespace ASECATTICA
             {
                 if (ValidarVacios() == true)
                 {
+
+                    //----------------------------------------------
+                    //Guarda los roles seleccionados en el ListBoxRol multiple
+                    String cadenaRoles = "";
+                    string[] roles = new string[3]; //la inicialización debe ser con la cantidad de roles que haya creado el administrador
+
+
+                    List<string> selecteds2 = new List<string>();
+                    foreach (ListItem rol in ListBoxRol.Items) {
+
+                        if (rol.Selected)
+                        {
+                            int indice = ListBoxRol.Items.IndexOf(rol);
+                            string elemento = rol.Text;
+                            string valor = rol.Value;
+
+                            //agregar a objeto o arreglo
+                           // selecteds2.Add(ListBoxRol.Items[indice].Value);
+                            cadenaRoles += ListBoxRol.Items[indice].Value + ",";
+
+                        }
+                        
+                        }
+                        cadenaRoles = cadenaRoles.TrimEnd(',');
+
+
+
+
+                    /*List<string> selecteds2 = new List<string>();
+
+                    List<int> seleccionados = ListBoxRol.GetSelectedIndices().ToList();
+
+                    for (int i = 0; i < seleccionados.Count; i++)
+                    {
+                        //ListItem l = ListBoxRol.Items[selecteds[i]];
+                        selecteds2.Add(ListBoxRol.Items[i].Value);
+                    }*/
+
+                    /*if (seleccionados.Count > 0)
+                    {
+                        //Selecciono los items
+                        for (int i = 0; i < seleccionados.Count; i++) {
+                            ListBoxRol.DataSource = seleccionados;
+                        }
+                    }*/
+
+                    /*foreach (int i in ListBoxRol.GetSelectedIndices()) {
+                        cadenaRoles += ListBoxRol.Items[i].Value + ",";
+
+                    }
+                    cadenaRoles = cadenaRoles.TrimEnd(',');*/
+
+                    //----------------------------------------------
                     string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
                     objetoDTO.AgregarUsu(TextBoxIDAsecattica.Text, TextBoxCedula.Text, TextBoxNombre.Text, DropDownListUbica.Text,
                         TextBoxApellido1.Text, TextBoxApellido2.Text,
-                         DropDownListRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, claveEncriptada,
+                         cadenaRoles, DropDownListEstado.Text, TextBoxCorreo.Text, claveEncriptada,
                          TextBoxTelefono.Text, TextBoxFechaNac.Text, TextBoxEdad.Text,
                          TextBoxDireccion.Text, TextBoxSexo.Text, TextBoxFechaIngreso.Text, TextBoxFechaSalida.Text = "");
 
@@ -424,7 +496,7 @@ namespace ASECATTICA
                         string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
                         objetoDTO.ActualizarUsu(TextBoxIDAsecattica.Text, TextBoxCedula.Text, DropDownListUbica.Text, TextBoxNombre.Text,
                         TextBoxApellido1.Text, TextBoxApellido2.Text,
-                        DropDownListRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
+                        ListBoxRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
                         TextBoxEdad.Text, TextBoxDireccion.Text, TextBoxSexo.Text, TextBoxFechaIngreso.Text, TextBoxFechaSalida.Text,
                         claveEncriptada);
 
@@ -494,7 +566,7 @@ namespace ASECATTICA
                 }
 
                 // Validación de Rol
-                if (DropDownListRol.Text == "")
+                if (ListBoxRol.Text == "")
                 {
                     bandera = false;
                     Contenido = Contenido + System.Convert.ToString("<li>Debe completar <b>Rol</b></li>");
