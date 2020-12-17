@@ -24,6 +24,7 @@ namespace Datos
 
         }//validar login
 
+        
         public int ValidarCedula(string cedula)
         {
             SqlCommand comandoValidar = new SqlCommand();
@@ -46,6 +47,23 @@ namespace Datos
             comando.CommandText = "sp_crud_TBUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@choice", "VALIDAR_CORREO");
+            comando.Parameters.AddWithValue("@Cedula", cedula);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            conexion.CerrarConexion();
+            return tabla;
+
+        }//fin validar correo
+
+        public DataTable ValidarRol(string cedula)
+        {
+            DataTable tabla = new DataTable();
+            SqlDataReader leer;
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "sp_crud_TBUsuarios";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@choice", "VALIDAR_ROL");
             comando.Parameters.AddWithValue("@Cedula", cedula);
             leer = comando.ExecuteReader();
             tabla.Load(leer);

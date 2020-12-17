@@ -35,6 +35,14 @@ namespace Negocio
             return tabla;
         }
 
+        public DataTable ValidarRolUsu(string cedula)
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoDAO.ValidarRol(cedula);
+
+            return tabla;
+        }
+
         public void ActualizarClaveUsu(string cedula, string clave)
         {
             objetoDAO.ActualizarClave(cedula, clave);

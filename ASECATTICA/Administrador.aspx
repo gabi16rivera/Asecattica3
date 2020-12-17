@@ -16,7 +16,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body class="sb-sidenav-toggled">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+       
+    
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Asecattica</a>
 
 
@@ -47,6 +49,9 @@
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
+                        
+                       
+                        
                         <div class="nav">
                             <%--<div class="sb-sidenav-menu-heading">Core</div>--%>
                             <a class="nav-link" href="Administrador.aspx">
@@ -54,6 +59,14 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Administración</div>
+                            
+                            <%-- BLOQUE DE OPCIONES PARA EL ADMINISTRADOR --%>
+                            <% 
+                                string rol = Request.QueryString["Rol"].ToString();
+
+                                if (rol.Contains("Administrador")) {
+                            %>
+
                             <a class="nav-link collapsed" href="AdmAjustes.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ajustes
@@ -100,15 +113,35 @@
                                 Usuarios
                             </a>
                             
-                            
+                             <%  }%> 
+                             <%-- FINALIZA EL BLOQUE PARA ADMINISTRADORES --%>
+
+                            <%-- INICIA EL BLOQUE PARA CONTABILIDAD --%>
+                            <% 
+                               if(rol.Contains("Contablidad"))
+                                {%>
+      
+
+                            <a class="nav-link collapsed" href="AdmUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Prueba Contabilidad
+                            </a>
+
+                            <%  }%>
+                            <%-- FINALIZA EL BLOQUE PARA CONTABILIDAD --%>
+                           
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logeado como:</div>
-                       Administrador
+                        <div class="small">Logeado con rol:</div>
+                       <%--Administrador--%>
+                       <%LblLogueado.Text = rol;%>
+                        <asp:Label ID="LblLogueado" runat="server" Text="Label"></asp:Label>
                     </div>
                 </nav>
             </div>
+
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">

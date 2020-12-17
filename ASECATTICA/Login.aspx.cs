@@ -6,12 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using System.Security.Cryptography;
+using System.Data;
 
 namespace ASECATTICA
 {
     public partial class Login : System.Web.UI.Page
     {
         DTO_Login objetoDTO = new DTO_Login();
+        DataTable verificaRol = new DataTable();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -27,10 +30,17 @@ namespace ASECATTICA
 
             //valida si encontró el idAsecattica y contraseña en BD
             int retornoID =  objetoDTO.ValidarLoginUsu(TxtCedula.Text,claveEncriptada);
-            
+
+            verificaRol = objetoDTO.ValidarRolUsu(TxtCedula.Text);
+
+            string rol="";
+
+            rol = verificaRol.Rows[0]["Rol"].ToString();
+
+
             if (retornoID == 1)
             {
-                Response.Redirect("Administrador.aspx");
+                Response.Redirect("Administrador.aspx?Rol=" + rol);
             }
             else {
                 //mensaje de usuario o contraseña incorrecta

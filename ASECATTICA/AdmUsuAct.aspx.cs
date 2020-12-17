@@ -87,35 +87,7 @@ namespace ASECATTICA
 
             }//fin if revisa roles
             //-----------------------------------------------
-            //revisa todos los código de roles de TBRoles
-           /* if (!IsPostBack)
-            {
-                CheckBoxListRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
-                ListItem i;
-                foreach (DataRow r in tablaRol.Rows)
-                {
-                    i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
-                    CheckBoxListRol.SelectedIndex = 0;
-                    CheckBoxListRol.Items.Add(i);
-                }
-
-            }//fin if revisa roles*/
-
-
-            //----------------------------------------------
-            ////revisa todos los código de roles de TBRoles
-            //if (!IsPostBack)
-            //{
-            //    DropDownListRol.Items.Insert(0, new ListItem("Seleccione el rol:", String.Empty));
-            //    ListItem i;
-            //    foreach (DataRow r in tablaRol.Rows)
-            //    {
-            //        i = new ListItem(r["Nombre"].ToString(), r["Nombre"].ToString());
-            //        DropDownListRol.SelectedIndex = 0;
-            //        DropDownListRol.Items.Add(i);
-            //    }
-
-            //}//fin if revisa roles
+            
 
             tablaEstado = objeto.MostrarEstado();
             //revisa todos los código de estados de TBEstados
@@ -327,9 +299,9 @@ namespace ASECATTICA
         }//fin método mostrar usuarios
 
 
-        
+        String cadenaRoles = "";
 
-        
+
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -350,57 +322,7 @@ namespace ASECATTICA
             {
                 if (ValidarVacios() == true)
                 {
-
-                    //----------------------------------------------
-                    //Guarda los roles seleccionados en el ListBoxRol multiple
-                    String cadenaRoles = "";
-                    string[] roles = new string[3]; //la inicialización debe ser con la cantidad de roles que haya creado el administrador
-
-
-                    List<string> selecteds2 = new List<string>();
-                    foreach (ListItem rol in ListBoxRol.Items) {
-
-                        if (rol.Selected)
-                        {
-                            int indice = ListBoxRol.Items.IndexOf(rol);
-                            string elemento = rol.Text;
-                            string valor = rol.Value;
-
-                            //agregar a objeto o arreglo
-                           // selecteds2.Add(ListBoxRol.Items[indice].Value);
-                            cadenaRoles += ListBoxRol.Items[indice].Value + ",";
-
-                        }
-                        
-                        }
-                        cadenaRoles = cadenaRoles.TrimEnd(',');
-
-
-
-
-                    /*List<string> selecteds2 = new List<string>();
-
-                    List<int> seleccionados = ListBoxRol.GetSelectedIndices().ToList();
-
-                    for (int i = 0; i < seleccionados.Count; i++)
-                    {
-                        //ListItem l = ListBoxRol.Items[selecteds[i]];
-                        selecteds2.Add(ListBoxRol.Items[i].Value);
-                    }*/
-
-                    /*if (seleccionados.Count > 0)
-                    {
-                        //Selecciono los items
-                        for (int i = 0; i < seleccionados.Count; i++) {
-                            ListBoxRol.DataSource = seleccionados;
-                        }
-                    }*/
-
-                    /*foreach (int i in ListBoxRol.GetSelectedIndices()) {
-                        cadenaRoles += ListBoxRol.Items[i].Value + ",";
-
-                    }
-                    cadenaRoles = cadenaRoles.TrimEnd(',');*/
+                    guardarRolesSeleccionados();
 
                     //----------------------------------------------
                     string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
@@ -419,6 +341,24 @@ namespace ASECATTICA
 
         }//fin BtnAgregar_Click
 
+        public void guardarRolesSeleccionados() {
+            string[] roles = new string[3]; //la inicialización debe ser con la cantidad de roles que haya creado el administrador
+
+
+            List<string> selecteds2 = new List<string>();
+            foreach (ListItem rol in ListBoxRol.Items)
+            {
+
+                if (rol.Selected)
+                {
+                    int indice = ListBoxRol.Items.IndexOf(rol);
+                    string elemento = rol.Text;
+                    string valor = rol.Value;
+                    cadenaRoles += ListBoxRol.Items[indice].Value + ",";
+                }
+            }
+            cadenaRoles = cadenaRoles.TrimEnd(',');
+        }
 
         private void limpiarForm()
         {
@@ -493,10 +433,11 @@ namespace ASECATTICA
                 {
                     if (ValidarVacios() == true)
                     {
+                        guardarRolesSeleccionados();
                         string claveEncriptada = EncriptarContraseña(TextBoxClave.Text);
                         objetoDTO.ActualizarUsu(TextBoxIDAsecattica.Text, TextBoxCedula.Text, DropDownListUbica.Text, TextBoxNombre.Text,
                         TextBoxApellido1.Text, TextBoxApellido2.Text,
-                        ListBoxRol.Text, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
+                        cadenaRoles, DropDownListEstado.Text, TextBoxCorreo.Text, TextBoxTelefono.Text, TextBoxFechaNac.Text,
                         TextBoxEdad.Text, TextBoxDireccion.Text, TextBoxSexo.Text, TextBoxFechaIngreso.Text, TextBoxFechaSalida.Text,
                         claveEncriptada);
 
