@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_Login.cs" />
+    <Compile Include="DTO_LineasCreditos.cs" />
     <Compile Include="DTO_Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

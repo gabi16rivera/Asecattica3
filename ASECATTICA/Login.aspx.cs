@@ -29,18 +29,20 @@ namespace ASECATTICA
             string claveEncriptada = EncriptarContraseña(TxtClave.Text);
 
             //valida si encontró el idAsecattica y contraseña en BD
-            int retornoID =  objetoDTO.ValidarLoginUsu(TxtCedula.Text,claveEncriptada);
+            int retornoID = objetoDTO.ValidarLoginUsu(TxtCedula.Text, claveEncriptada);
 
             verificaRol = objetoDTO.ValidarRolUsu(TxtCedula.Text);
 
-            string rol="";
+            string rol = "";
 
+            
             rol = verificaRol.Rows[0]["Rol"].ToString();
-
+            Session["rol"] = rol;
 
             if (retornoID == 1)
             {
-                Response.Redirect("Administrador.aspx?Rol=" + rol);
+                //Response.Redirect("Administrador.aspx?Rol=" + rol);
+                Response.Redirect("Administrador.aspx");
             }
             else {
                 //mensaje de usuario o contraseña incorrecta

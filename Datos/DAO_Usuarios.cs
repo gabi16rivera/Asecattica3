@@ -44,7 +44,20 @@ namespace Datos
             return (int)comandoActUsu.ExecuteScalar();
 
         }
-        
+
+        public int ValidarCedula(string cedula)
+        {
+            SqlCommand comandoActUsu = new SqlCommand();
+            comandoActUsu.Connection = conexion.AbrirConexion();
+            comandoActUsu.CommandText = "sp_crud_TBUsuarios";
+            comandoActUsu.CommandType = CommandType.StoredProcedure;
+            comandoActUsu.Parameters.AddWithValue("@choice", "VALIDAR_CEDULA");
+            comandoActUsu.Parameters.AddWithValue("@Cedula", cedula);
+
+            return (int)comandoActUsu.ExecuteScalar();
+
+        }
+
         public DataTable MostrarUsuario(string ID_Asecattica)
         {
             DataTable tabla = new DataTable();

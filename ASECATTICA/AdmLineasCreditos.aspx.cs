@@ -17,7 +17,16 @@ namespace ASECATTICA
         protected void GvLineasCredito_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvLineasCredito.SelectedRow;
-            Response.Redirect("AdmLineasCreditoAct.aspx");
+            Session["CodigoLineaCredito"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Línea Crédito";
+            Response.Redirect("AdmLineasCreditosAct.aspx");
+
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Línea Crédito";
+            Response.Redirect("AdmLineasCreditosAct.aspx");
         }
     }
 }

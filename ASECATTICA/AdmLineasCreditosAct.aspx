@@ -53,10 +53,50 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Administración</div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="AdmAjustes.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ajustes
+                            </a>
+                            <a class="nav-link collapsed" href="AdmAsientos.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Asientos
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCentroCosto.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Centro de Costos
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCreditosUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Crédito de Usuarios
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCuentas.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Cuentas
+                            </a>
+                            <a class="nav-link collapsed" href="AdmEstados.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Estados
+                            </a>
+                            <a class="nav-link collapsed" href="AdmOperacionesUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Operaciones de Usuarios
+                            </a>
+                            <a class="nav-link collapsed" href="AdmRoles.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Roles
+                            </a>
+                            
+                            <a class="nav-link collapsed" href="AdmLineasCreditos.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Línea de Crédito
+                            </a>
+                            <a class="nav-link collapsed" href="AdmUbicacion.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ubicación
+                            </a>
+                            <a class="nav-link collapsed" href="AdmUsu.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Usuarios
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
@@ -89,9 +129,20 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Actualizar información</h3></div>
+                                                                      
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">
+                                        <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label></h3></div>
                                     <div class="card-body">
                                         <form runat="server">
+
+<!--*****************************
+    AL INICIAR EL FORM AGREGAR:-->
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+<asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+<ContentTemplate>
+<!--*****************************
+    CONTENIDO NORMAL DEL FORMULARIO-->
+
                                             <div class="form-row" runat="server" >
                                                <div class="col-md-6">
                                                     <div class="form-group">
@@ -132,7 +183,7 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputFechaUltAct">Fecha de última actualización</label>
                                                      
-                                                        <asp:TextBox ID="TxtFechaUltAct"  runat="server" class="form-control py-4"></asp:TextBox>
+                                                        <asp:TextBox ID="TxtFechaUltAct"  runat="server" class="form-control py-4" TextMode="Date"></asp:TextBox>
                                                     </div>
                                                 </div>
 
@@ -157,9 +208,103 @@
                                             </div> <%--Fin del form-row--%>
                                             
                                       
+                                             <asp:Button ID="BtnAgregar" runat="server" Text="Agregar" OnClick="BtnAgregar_Click"/>
+                                            
+                                            <asp:Button ID="BtnActualizar" runat="server" Text="Actualizar" OnClick="BtnActualizar_Click"/>
+                                            <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" OnClick="BtnEliminar_Click"/>
 
-                            <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" />
-                                            <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" />
+    <!-- ANTES LOS MODALES NECESARIOS AQUI -->
+                                            <!-- Bootstrap Modal Dialog: NOTIFICACIONES -->
+                                <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
+                                    <div class="modal-dialog  modal-lg">
+                                        <asp:UpdatePanel ID="upModal" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">
+                                                            <asp:Label ID="lblModalTitle" runat="server" Text=""></asp:Label></h4>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                            
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
+                                                    </div>
+                                                   <div class="modal-footer">
+                                                       <button class="btn btn-info" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+                                                   </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div> <%--fin de modal--%>
+
+    <!-- Bootstrap Modal Dialog: VALIDAR RESPUESTA -->
+                                <div class="modal fade" id="myModalValida" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
+                                    <div class="modal-dialog  modal-lg">
+                                        <asp:UpdatePanel ID="upModalValida" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">
+                                                            <asp:Label ID="lblModalTitleValida" runat="server" Text=""></asp:Label></h4>
+                                                            <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>--%>
+                                                            
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:Label ID="lblModalBodyValida" runat="server" Text=""></asp:Label>
+                                                    </div>
+                                                   <div class="modal-footer">
+                                                  <asp:Button ID="BtnSi" runat="server" CssClass="btn btn-info" Text="Si" data-dismiss="modal" aria-hidden="true" OnClick="BtnSi_Click" UseSubmitBehavior="false"/>
+                                                    <asp:Button ID="BtnNo" runat="server" CssClass="btn btn-info" Text="No" data-dismiss="modal" aria-hidden="true"/>   
+                                                   </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div> <%--fin de modal--%>
+
+    <!-- ANTES LOS MODALES NECESARIOS AQUI -->
+                                            <!-- Bootstrap Modal Dialog: REGRESAR -->
+                                <div class="modal fade" id="myModalRegresar" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <!--data-backdrop="static" data-keyboard="false"-->
+                                    <div class="modal-dialog  modal-lg">
+                                        <asp:UpdatePanel ID="upModalRegresar" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+                                            <ContentTemplate>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">
+                                                            <asp:Label ID="lblModalTitleRegresar" runat="server" Text=""></asp:Label></h4>
+                                                            <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>--%>
+                                                            
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <asp:Label ID="lblModalBodyRegresar" runat="server" Text=""></asp:Label>
+                                                    </div>
+                                                   <div class="modal-footer">
+                                                       <asp:Button ID="BtnRegresar" runat="server" CssClass="btn btn-info" Text="Regresar" data-dismiss="modal" aria-hidden="true" UseSubmitBehavior="false" OnClick="BtnRegresar_Click"/>
+                                                   </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                    </div>
+                                </div> <%--fin de modal--%>
+
+    <!--*****************************
+    ANTES DEL CIERRE DEL FORM AGREGAR: -->
+    <!--AGREGAR LOS BOTONES QUE HACEN ALGUN EVENTO: CLICK, TEXTCHANGE,SELECTEDINDEXCHANGE U OTROS -->
+
+</ContentTemplate>
+<Triggers>
+    <asp:AsyncPostBackTrigger ControlID="BtnActualizar" EventName="Click" />
+    <asp:AsyncPostBackTrigger ControlID="BtnEliminar" EventName="Click" />
+</Triggers>
+</asp:UpdatePanel>
+
                                          </form>
                                     </div>
                                     

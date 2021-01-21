@@ -62,7 +62,8 @@
                             
                             <%-- BLOQUE DE OPCIONES PARA EL ADMINISTRADOR --%>
                             <% 
-                                string rol = Request.QueryString["Rol"].ToString();
+                                //string rol = Request.QueryString["Rol"].ToString();
+                                string rol = Session["rol"].ToString();
 
                                 if (rol.Contains("Administrador")) {
                             %>
@@ -130,6 +131,64 @@
                             <%  }%>
                             <%-- FINALIZA EL BLOQUE PARA CONTABILIDAD --%>
                            
+                             <%-- INICIA EL BLOQUE PARA CONTABILIDAD --%>
+                            <% 
+                               if(rol.Contains("Administrador, Contablidad"))
+                                {%>
+      
+                            <a class="nav-link collapsed" href="AdmAjustes.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ajustes
+                            </a>
+                            <a class="nav-link collapsed" href="AdmAsientos.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Asientos
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCentroCosto.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Centro de Costos
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCreditosUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Crédito de Usuarios
+                            </a>
+                            <a class="nav-link collapsed" href="AdmCuentas.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Cuentas
+                            </a>
+                            <a class="nav-link collapsed" href="AdmEstados.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Estados
+                            </a>
+                            <a class="nav-link collapsed" href="AdmOperacionesUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Operaciones de Usuarios
+                            </a>
+                            <a class="nav-link collapsed" href="AdmRoles.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Roles
+                            </a>
+                            
+                            <a class="nav-link collapsed" href="AdmLineasCreditos.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Línea de Crédito
+                            </a>
+                            <a class="nav-link collapsed" href="AdmUbicacion.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ubicación
+                            </a>
+                            <a class="nav-link collapsed" href="AdmUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Usuarios
+                            </a>
+
+                            <a class="nav-link collapsed" href="AdmUsu.aspx">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Prueba Contabilidad
+                            </a>
+
+                            <%  }%>
+                            <%-- FINALIZA EL BLOQUE PARA CONTABILIDAD --%>
 
                         </div>
                     </div>

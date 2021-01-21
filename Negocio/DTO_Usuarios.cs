@@ -27,6 +27,13 @@ namespace Negocio
             return datoretornoID;
         }
 
+        public int ValidarCedu(string cedula)
+        {
+            int datoretornoCedula = objetoDAO.ValidarCedula(cedula);
+
+            return datoretornoCedula;
+        }
+
         public DataTable MostrarUsu(string ID_Asecattica)
         {
             DataTable tabla = new DataTable();

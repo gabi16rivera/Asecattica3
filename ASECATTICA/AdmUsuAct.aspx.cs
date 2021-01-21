@@ -26,7 +26,7 @@ namespace ASECATTICA
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Session["Seleccion"] = "";
+           // Session["Seleccion"] = "";
 
            if (IsPostBack == false) //La página no se actualiza por segunda vez
            {
@@ -305,18 +305,32 @@ namespace ASECATTICA
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
 
-
-
             int retornoID = objeto.ValidarIDAse(TextBoxIDAsecattica.Text);
+            int retornoCedula = objeto.ValidarCedu(TextBoxCedula.Text);
             bool banderaID = false;
 
-            if (retornoID == 1)//valida si encontró un IDAsecattica duplicado
+            if (retornoID == 1 || retornoCedula == 1)//valida si encontró un IDAsecattica duplicado
             {
                 banderaID = true;
             }
+
+
             if (banderaID == true)
             {
-                Mensaje("Usuario duplicado", "El ID Asecattica ya se encuentra en la base de datos, por favor ingresar uno nuevo");
+                if (retornoID==1 && retornoCedula==1)
+                {
+                    Mensaje("Usuario duplicado", "El ID Asecattica y Cédula ya se encuentra en la base de datos, por favor ingresar información nueva");
+
+                }
+                else if(retornoID==1)
+                {
+                    Mensaje("Usuario duplicado", "El ID Asecattica ya se encuentra en la base de datos, por favor ingresar uno nuevo");
+                }
+                else if(retornoCedula==1)
+                {
+                    Mensaje("Usuario duplicado", "La cédula ya se encuentra en la base de datos, por favor ingresar uno nuevo");
+
+                }
             }
             else
             {
