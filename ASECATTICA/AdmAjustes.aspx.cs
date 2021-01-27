@@ -19,9 +19,15 @@ namespace ASECATTICA
         {
             
             GridViewRow row = GvAjustes.SelectedRow;
+            Session["CodigoAjuste"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Ajuste";
             Response.Redirect("AdmAjustesAct.aspx");
         }
 
-        
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Ajuste";
+            Response.Redirect("AdmAjustesAct.aspx");
+        }
     }
 }

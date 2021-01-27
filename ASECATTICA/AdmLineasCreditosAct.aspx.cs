@@ -49,8 +49,6 @@ namespace ASECATTICA
             }
         }//fin Page_Load
 
-
-
         protected void BtnAgregar_Click(object sender, EventArgs e)
         {
             int retornoCodigo = objetoDTO.ValidarCod(TxtCodigoLineaCredito.Text);
@@ -318,5 +316,6 @@ namespace ASECATTICA
             }//fin session actualizar
         }
 
+       
     }//fin AdmLineasCreditosAct
 }//fin namespace
