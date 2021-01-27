@@ -28,21 +28,15 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
-
                     MostrarAjustes();
-
-
                 }
 
                 else
                 {
-                    //Nuevo     
-
+                    //Nuevo    
                     BtnActualizar.Visible = false;
                     BtnEliminar.Visible = false;
                     BtnAgregar.Visible = true;
-
-
                 }
 
             }
@@ -63,7 +57,7 @@ namespace ASECATTICA
 
              if (banderaID == true)
              {
-                 Mensaje("Código duplicado", "El Código de Línea de Crédito ya se encuentra en la base de datos, por favor ingresar otro código");
+                 Mensaje("Código duplicado", "La infomación ya se encuentra en la base de datos, por favor ingresar otro código");
 
              }
              else
@@ -74,7 +68,7 @@ namespace ASECATTICA
                          txtRangoFinal.Text, txtPeso.Text, txtDescripcion.Text);
 
                      //mostrar mensaje de usuario agregado 
-                     Mensaje("Ajuste agregado", "La información se agregó en base de datos sin problemas");
+                     Mensaje("Asiento agregado", "La información se agregó en base de datos sin problemas");
                      limpiarForm();
                  }//fin else validar vacios
              }//fin else duplicado*/
@@ -83,13 +77,13 @@ namespace ASECATTICA
         protected void BtnActualizar_Click(object sender, EventArgs e)
          {
              Session["Seleccion"] = "Actualizar";
-             MensajeValidarAccion("Advertencia", "¿Esta seguro que desea actualizar la línea de crédito?");
+             MensajeValidarAccion("Advertencia", "¿Esta seguro que desea actualizar?");
          }
         
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
             Session["Seleccion"] = "Eliminar";
-            MensajeValidarAccion("Advertencia", "¿Está seguro que desea eliminar la línea de crédito?");
+            MensajeValidarAccion("Advertencia", "¿Está seguro que desea eliminar?");
         }
        
         private void MostrarAjustes()
@@ -276,7 +270,7 @@ namespace ASECATTICA
                     objetoDTO.EliminarCod(txtCodigo.Text);
                     if (objetoDTO.ValidarCodEliminado(txtCodigo.Text) == 0)
                     {
-                        MensajeRegresar("Usuario eliminado", "El usuario se eliminó en base de datos sin problemas.");
+                        MensajeRegresar("Ajuste eliminado", "El usuario se eliminó en base de datos sin problemas.");
                     }
                 }
 

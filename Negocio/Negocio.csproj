@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_Asientos.cs" />
     <Compile Include="DTO_Ajustes.cs" />
     <Compile Include="DTO_Login.cs" />
     <Compile Include="DTO_LineasCreditos.cs" />

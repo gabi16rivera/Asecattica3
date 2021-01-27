@@ -17,6 +17,14 @@ namespace ASECATTICA
         protected void GvAsientos_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvAsientos.SelectedRow;
+            Session["CodigoTipoAsiento"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Asiento";
+            Response.Redirect("AdmAsientosAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Asiento";
             Response.Redirect("AdmAsientosAct.aspx");
         }
     }
