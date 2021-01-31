@@ -17,6 +17,14 @@ namespace ASECATTICA
         protected void GvCreditosUsu_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvCreditosUsu.SelectedRow;
+            Session["Codigo"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Crédito de Usuario";
+            Response.Redirect("AdmCreditosUsuAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Crédito de Usuario";
             Response.Redirect("AdmCreditosUsuAct.aspx");
         }
     }

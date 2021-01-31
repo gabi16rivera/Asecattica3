@@ -29,7 +29,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
-
+                    TxtCodigoLineaCredito.Attributes["disabled"] = "disabled";
                     MostrarLineasCreditos();
 
 

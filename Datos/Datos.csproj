@@ -70,6 +70,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO_Estados.cs" />
+    <Compile Include="DAO_Roles.cs" />
+    <Compile Include="DAO_Ubicacion.cs" />
+    <Compile Include="DAO_CentroCostos.cs" />
     <Compile Include="DAO_Asientos.cs" />
     <Compile Include="DAO_Ajustes.cs" />
     <Compile Include="DAO_Login.cs" />

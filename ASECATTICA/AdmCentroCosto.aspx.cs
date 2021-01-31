@@ -17,6 +17,14 @@ namespace ASECATTICA
         protected void GvCentroCosto_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvCentroCosto.SelectedRow;
+            Session["Codigo"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Centro de Costo";
+            Response.Redirect("AdmCentroCostoAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Centro de Costo";
             Response.Redirect("AdmCentroCostoAct.aspx");
         }
     }

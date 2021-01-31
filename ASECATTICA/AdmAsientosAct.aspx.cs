@@ -27,6 +27,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
+                    TxtCodigo.Attributes["disabled"] = "disabled";
                     MostrarAsientos();
                 }
 
@@ -106,7 +107,7 @@ namespace ASECATTICA
                     objetoDTO.EliminarCod(TxtCodigo.Text);
                     if (objetoDTO.ValidarCodEliminado(TxtCodigo.Text) == 0)
                     {
-                        MensajeRegresar("Asiento eliminado", "El usuario se eliminó en base de datos sin problemas.");
+                        MensajeRegresar("Asiento eliminado", "Se eliminó en base de datos sin problemas.");
                     }
                 }
 

@@ -17,7 +17,16 @@ namespace ASECATTICA
         protected void GvEstados_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvEstados.SelectedRow;
+            Session["Codigo"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Estados";
             Response.Redirect("AdmEstadosAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Estados";
+            Response.Redirect("AdmEstadosAct.aspx");
+
         }
     }
 }

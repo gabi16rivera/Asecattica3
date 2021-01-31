@@ -17,6 +17,14 @@ namespace ASECATTICA
         protected void GvRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvRoles.SelectedRow;
+            Session["Codigo"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Roles";
+            Response.Redirect("AdmRolesAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Roles";
             Response.Redirect("AdmRolesAct.aspx");
         }
     }

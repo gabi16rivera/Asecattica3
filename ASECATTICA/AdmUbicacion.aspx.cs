@@ -17,7 +17,16 @@ namespace ASECATTICA
         protected void GvUbicacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvUbicacion.SelectedRow;
+            Session["Codigo"] = row.Cells[1].Text;
+            Session["Titulo"] = "Actualizar / Eliminar Ubicación";
             Response.Redirect("AdmUbicacionAct.aspx");
+        }
+
+        protected void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            Session["Titulo"] = "Agregar Ubicación";
+            Response.Redirect("AdmUbicacionAct.aspx");
+
         }
     }
 }

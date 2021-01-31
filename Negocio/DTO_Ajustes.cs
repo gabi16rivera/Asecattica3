@@ -34,24 +34,24 @@ namespace Negocio
             objetoDAO.AgregarCodigo(codigoAjuste, nombreAjuste, tipoAjuste, rangoInicial, rangoFinal, peso, descripcion);
         }
 
-        public void EliminarCod(string codigoLineaCredito)
+        public void EliminarCod(string codigoAjuste)
         {
 
-            objetoDAO.EliminarCodigo(codigoLineaCredito);
+            objetoDAO.EliminarCodigo(codigoAjuste);
         }
 
-        public int ValidarCodEliminado(string codigoLineaCredito)
+        public int ValidarCodEliminado(string codigoAjuste)
         {
-            int datoretorno = objetoDAO.ValidarCodigoEliminado(codigoLineaCredito);
+            int datoretorno = objetoDAO.ValidarCodigoEliminado(codigoAjuste);
 
             return datoretorno;
         }
 
-        public void ActualizarCod(string codigoLineaCredito, string nombreLineaCredito,
+        public void ActualizarCod(string codigoAjuste, string nombreLineaCredito,
             string tipoAsiento, string descripcion, string fechaUltAct, string porcentajeInteres,
             string topeMaximo)
         {
-            objetoDAO.ActualizarCodigo(codigoLineaCredito, nombreLineaCredito, tipoAsiento, descripcion,
+            objetoDAO.ActualizarCodigo(codigoAjuste, nombreLineaCredito, tipoAsiento, descripcion,
                 fechaUltAct, porcentajeInteres, topeMaximo);
         }
  

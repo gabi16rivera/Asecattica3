@@ -28,6 +28,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
+                    txtCodigo.Attributes["disabled"] = "disabled";
                     MostrarAjustes();
                 }
 

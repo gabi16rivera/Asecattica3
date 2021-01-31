@@ -119,14 +119,14 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row table table-responsive"> 
-                        <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Usuario" />
+                            <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Ajuste" OnClick="BtnNuevo_Click" />
                             
                         <asp:GridView ID="GvUbicacion" runat="server" AutoGenerateColumns="False" DataSourceID="DsUbicacion" ViewStateMode="Enabled" ValidateRequestMode="Enabled" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GvUbicacion_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <EmptyDataTemplate>No hay información</EmptyDataTemplate>
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="CodigoUbicacion" HeaderText="CodigoUbicacion" SortExpression="CodigoUbicacion" />
+                            <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                         </Columns>
@@ -144,7 +144,7 @@
                     
                                <asp:SqlDataSource ID="DsUbicacion" runat="server" ConnectionString="<%$ ConnectionStrings:bdAsecatticaConnectionString %>" SelectCommand="sp_crud_TBUbicacion" SelectCommandType="StoredProcedure">
                                    <SelectParameters>
-                                       <asp:Parameter DefaultValue="0" Name="CodigoUbicacion" Type="String" />
+                                       <asp:Parameter DefaultValue="0" Name="Codigo" Type="String" />
                                        <asp:Parameter DefaultValue="0" Name="Nombre" Type="String" />
                                        <asp:Parameter DefaultValue="0" Name="Descripcion" Type="String" />
                                        <asp:Parameter DefaultValue="Select" Name="choice" Type="String" />

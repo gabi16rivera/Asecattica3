@@ -119,7 +119,7 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row table table-responsive"> 
-                        <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Usuario" />
+                        <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Ajuste" OnClick="BtnNuevo_Click" />
                             
                         <asp:GridView ID="GvCreditosUsu" runat="server" AutoGenerateColumns="False" DataSourceID="DsCreditosUsu" ViewStateMode="Enabled" ValidateRequestMode="Enabled" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GvCreditosUsu_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
