@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Datos
 {
     public class DAO_Conexion
     {
-        private SqlConnection Conexion = new SqlConnection("Data Source=SQL5063.site4now.net;Initial Catalog=DB_A6C94E_bdAsecattica;User Id=DB_A6C94E_bdAsecattica_admin;Password=4553c4tt1c4");
+        private SqlConnection Conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["bdAsecatticaConnectionString"].ConnectionString);
+
         public SqlConnection AbrirConexion()
         {
             if (Conexion.State == ConnectionState.Closed)
