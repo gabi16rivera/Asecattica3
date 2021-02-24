@@ -40,7 +40,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Perfil</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="Login.aspx">Salir</a>
+                        <a class="dropdown-item" href="Index.aspx">Salir</a>
                     </div>
                 </li>
             </ul>

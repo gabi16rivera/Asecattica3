@@ -78,6 +78,7 @@
     <Content Include="AdmCreditosUsu.aspx" />
     <Content Include="AdmCuentas.aspx" />
     <Content Include="AdmEstados.aspx" />
+    <Content Include="Index.aspx" />
     <Content Include="AdmUbicacionAct.aspx" />
     <Content Include="AdmRolesAct.aspx" />
     <Content Include="AdmOperacionesUsuAct.aspx" />
@@ -232,6 +233,13 @@
     </Compile>
     <Compile Include="AdmAsientosAct.aspx.designer.cs">
       <DependentUpon>AdmAsientosAct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdmUbicacionAct.aspx.cs">
       <DependentUpon>AdmUbicacionAct.aspx</DependentUpon>
