@@ -13,19 +13,47 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary">
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
+    <body class="bg-primary sb-sidenav-toggled h-100">
+
+            <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+     
+      <a class="navbar-brand" href="#page-top">Asecattica</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link " href="#page-top">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#servicios">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#quienesSomos">Quiénes Somos</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+        <div class="bg-light" id="layoutAuthentication">
+            <div class="bg-light" id="layoutAuthentication_content" style="margin-top:100px;">
                 <main>
                     
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-5">
+                    <div class="container h-100">
+                        <div class="row justify-content-center h-100">
+                            <div class="col-lg-5 h-100 align-self-center">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar sesión</h3></div>
                                     <div class="card-body">
-
-
 
                                         <form runat="server">
 <!--*****************************
@@ -55,7 +83,7 @@
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="contrasenia.aspx">¿Olvidó su contraseña?</a>
                                                 <%--<a class="btn btn-primary" href="Administrador.html">Ingresar</a>--%>
-                                                <asp:Button class="btn btn-primary" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
+                                                <asp:Button class="btn btn-primary btn-dark" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
                                             </div>
 
                                             <!--*****************************
@@ -101,9 +129,6 @@
 
                                         </form>
                                     </div>
-                                    <%--<div class="card-footer text-center">
-                                        <div class="small"><a href="register.html">Need an account? Sign up!</a></div>
-                                    </div>--%>
                                 </div>
                             </div>
                         </div>
@@ -111,18 +136,13 @@
                 </main>
             </div>
             <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+               
+                     <!-- Copyright -->  
+    <div class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+    </div>
+  </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

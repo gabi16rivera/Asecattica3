@@ -10030,12 +10030,15 @@ body {
 
 #layoutAuthentication {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
 }
 #layoutAuthentication #layoutAuthentication_content {
   min-width: 0;
   flex-grow: 1;
+  width: 450px;
 }
 #layoutAuthentication #layoutAuthentication_footer {
   min-width: 0;
