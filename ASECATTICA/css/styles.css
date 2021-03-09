@@ -2527,18 +2527,7 @@ fieldset:disabled a.btn {
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
-.btn-login {
-  color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
-  padding: 0.5rem 1rem;
-}
 
-.btn-login:hover {
-  color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
-}
 .btn-success {
   color: #fff;
   background-color: #28a745;
@@ -10100,13 +10089,13 @@ body {
   }
 
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
-    transform: translateX(0px);
+    transform: translateX(-225px);
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
-    margin-left: 0px;
+    margin-left: -225px;
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
-    display: block;
+    display: none;
   }
 }
 .sb-nav-fixed .sb-topnav {

@@ -49,7 +49,7 @@ namespace ASECATTICA
         {
             MailMessage correo = new MailMessage();
             correo.To.Add(new MailAddress(CorreoUsuario));
-            correo.From = new MailAddress("gabi16rivera@gmail.com");
+            correo.From = new MailAddress("soporte@asecattica.com");
             correo.Subject = "Recuperación de contraseña Asecattica";
 
             string stCuerpoHTML = "<!DOCTYPE html>";
@@ -64,7 +64,7 @@ namespace ASECATTICA
                 "para hacerlo solo debe hacer clic en el siguiente enlace:";
             stCuerpoHTML += "<br/>";
             stCuerpoHTML += "</p>";
-            stCuerpoHTML += "<a href= https://localhost:44392/RecuperarContrasenia.aspx?cedula=" + cedulaUsuario +">";
+            stCuerpoHTML += "<a href= http://asecattica.com/RecuperarContrasenia.aspx?cedula=" + cedulaUsuario +">";
             stCuerpoHTML += "Restaurar Contraseña</a>";
             stCuerpoHTML += "</div>";
             stCuerpoHTML += "</body>";
@@ -75,11 +75,11 @@ namespace ASECATTICA
             correo.Priority = MailPriority.Normal;
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
+            smtp.Host = "mail.asecattica.com";
+            smtp.Port = 8889;
+            smtp.EnableSsl = false;
             smtp.UseDefaultCredentials =false;
-            smtp.Credentials = new NetworkCredential("gabi16rivera@gmail.com", "qwrt.160491");
+            smtp.Credentials = new NetworkCredential("soporte@asecattica.com", "4553c4tt1c4#");
 
             try
             {

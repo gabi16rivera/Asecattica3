@@ -78,6 +78,29 @@
     <Content Include="AdmCreditosUsu.aspx" />
     <Content Include="AdmCuentas.aspx" />
     <Content Include="AdmEstados.aspx" />
+    <Content Include="assets\demo\chart-area-demo.js" />
+    <Content Include="assets\demo\chart-bar-demo.js" />
+    <Content Include="assets\demo\chart-pie-demo.js" />
+    <Content Include="assets\demo\datatables-demo.js" />
+    <Content Include="assets\img\error-404-monochrome.svg" />
+    <Content Include="assets\img\header-bg.jpeg" />
+    <Content Include="assets\img\header-cafe-2-bg.jpg" />
+    <Content Include="assets\img\header-cafe-bg.jpg" />
+    <Content Include="assets\img\portfolio\01-full.jpg" />
+    <Content Include="assets\img\portfolio\01-thumbnail.jpg" />
+    <Content Include="assets\img\portfolio\02-full.jpg" />
+    <Content Include="assets\img\portfolio\02-thumbnail.jpg" />
+    <Content Include="assets\img\portfolio\03-full.jpg" />
+    <Content Include="assets\img\portfolio\03-thumbnail.jpg" />
+    <Content Include="assets\img\portfolio\04-full.jpg" />
+    <Content Include="assets\img\portfolio\04-thumbnail.jpg" />
+    <Content Include="assets\img\portfolio\05-full.jpg" />
+    <Content Include="assets\img\portfolio\05-thumbnail.jpg" />
+    <Content Include="assets\img\portfolio\06-full.jpg" />
+    <Content Include="assets\img\portfolio\06-thumbnail.jpg" />
+    <Content Include="css\styles.css" />
+    <Content Include="css\stylesborrar.css" />
+    <Content Include="css\stylesIndex.css" />
     <Content Include="Index.aspx" />
     <Content Include="AdmUbicacionAct.aspx" />
     <Content Include="AdmRolesAct.aspx" />
@@ -99,10 +122,11 @@
     <Content Include="Administrador.aspx" />
     <Content Include="AdmUsu.aspx" />
     <Content Include="AdmUsuAct.aspx" />
+    <Content Include="js\scripts.js" />
+    <Content Include="js\scriptsIndex.js" />
     <Content Include="RecuperarContrasenia.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Contrasenia.aspx" />
-    <Content Include="Default.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -126,7 +150,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="WebForm1.aspx" />
     <None Include="Properties\PublishProfiles\PUBLICACIÓN.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -396,22 +419,8 @@
     <Compile Include="Contrasenia.aspx.designer.cs">
       <DependentUpon>Contrasenia.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vista_Usuarios.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -8,100 +8,160 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdmAjustes.aspx">
-      <publishTime>01/27/2021 11:57:16</publishTime>
+      <publishTime>03/08/2021 17:57:43</publishTime>
     </File>
     <File Include="AdmAjustesAct.aspx">
-      <publishTime>01/27/2021 10:19:13</publishTime>
+      <publishTime>03/08/2021 11:14:48</publishTime>
     </File>
     <File Include="AdmAsientos.aspx">
-      <publishTime>01/27/2021 10:17:20</publishTime>
+      <publishTime>03/08/2021 17:58:29</publishTime>
     </File>
     <File Include="AdmAsientosAct.aspx">
-      <publishTime>01/27/2021 10:29:26</publishTime>
+      <publishTime>03/08/2021 11:14:16</publishTime>
     </File>
     <File Include="AdmCentroCosto.aspx">
-      <publishTime>01/27/2021 12:00:43</publishTime>
+      <publishTime>03/08/2021 17:58:12</publishTime>
     </File>
     <File Include="AdmCentroCostoAct.aspx">
-      <publishTime>01/30/2021 15:19:23</publishTime>
+      <publishTime>03/08/2021 10:20:21</publishTime>
     </File>
     <File Include="AdmCreditosUsu.aspx">
-      <publishTime>01/30/2021 15:37:31</publishTime>
+      <publishTime>03/08/2021 17:59:16</publishTime>
     </File>
     <File Include="AdmCreditosUsuAct.aspx">
-      <publishTime>01/30/2021 15:40:39</publishTime>
+      <publishTime>03/08/2021 10:21:32</publishTime>
     </File>
     <File Include="AdmCuentas.aspx">
-      <publishTime>11/19/2020 18:27:30</publishTime>
+      <publishTime>03/08/2021 17:59:02</publishTime>
     </File>
     <File Include="AdmCuentasAct.aspx">
-      <publishTime>11/19/2020 18:27:30</publishTime>
+      <publishTime>03/08/2021 10:24:53</publishTime>
     </File>
     <File Include="AdmEstados.aspx">
-      <publishTime>01/30/2021 19:12:14</publishTime>
+      <publishTime>03/08/2021 17:58:47</publishTime>
     </File>
     <File Include="AdmEstadosAct.aspx">
-      <publishTime>01/30/2021 18:52:12</publishTime>
+      <publishTime>03/08/2021 10:23:19</publishTime>
     </File>
     <File Include="Administrador.aspx">
-      <publishTime>02/24/2021 11:49:54</publishTime>
+      <publishTime>03/08/2021 18:00:26</publishTime>
     </File>
     <File Include="AdmLineasCreditos.aspx">
-      <publishTime>01/27/2021 11:58:25</publishTime>
+      <publishTime>03/08/2021 18:00:13</publishTime>
     </File>
     <File Include="AdmLineasCreditosAct.aspx">
-      <publishTime>01/27/2021 09:32:48</publishTime>
+      <publishTime>03/08/2021 11:26:43</publishTime>
     </File>
     <File Include="AdmOperacionesUsu.aspx">
-      <publishTime>11/19/2020 18:28:00</publishTime>
+      <publishTime>03/08/2021 17:59:56</publishTime>
     </File>
     <File Include="AdmOperacionesUsuAct.aspx">
-      <publishTime>11/19/2020 18:27:59</publishTime>
+      <publishTime>03/08/2021 10:27:10</publishTime>
     </File>
     <File Include="AdmRoles.aspx">
-      <publishTime>01/30/2021 18:42:42</publishTime>
+      <publishTime>03/08/2021 17:59:42</publishTime>
     </File>
     <File Include="AdmRolesAct.aspx">
-      <publishTime>01/30/2021 18:14:02</publishTime>
+      <publishTime>03/08/2021 10:45:56</publishTime>
     </File>
     <File Include="AdmUbicacion.aspx">
-      <publishTime>01/30/2021 17:19:57</publishTime>
+      <publishTime>03/08/2021 18:01:13</publishTime>
     </File>
     <File Include="AdmUbicacionAct.aspx">
-      <publishTime>01/30/2021 17:04:17</publishTime>
+      <publishTime>03/08/2021 10:35:52</publishTime>
     </File>
     <File Include="AdmUsu.aspx">
-      <publishTime>11/19/2020 11:12:18</publishTime>
+      <publishTime>03/08/2021 18:00:54</publishTime>
     </File>
     <File Include="AdmUsuAct.aspx">
-      <publishTime>12/03/2020 10:37:39</publishTime>
+      <publishTime>03/08/2021 11:27:35</publishTime>
+    </File>
+    <File Include="assets/demo/chart-area-demo.js">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="assets/demo/chart-bar-demo.js">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="assets/demo/chart-pie-demo.js">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="assets/demo/datatables-demo.js">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="assets/img/error-404-monochrome.svg">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="assets/img/header-bg.jpeg">
+      <publishTime>02/22/2021 10:18:38</publishTime>
+    </File>
+    <File Include="assets/img/header-cafe-2-bg.jpg">
+      <publishTime>02/22/2021 10:26:06</publishTime>
+    </File>
+    <File Include="assets/img/header-cafe-bg.jpg">
+      <publishTime>02/22/2021 10:24:10</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/01-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/01-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/02-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/02-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/03-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/03-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/04-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/04-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/05-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/05-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/06-full.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
+    </File>
+    <File Include="assets/img/portfolio/06-thumbnail.jpg">
+      <publishTime>11/03/2020 13:49:46</publishTime>
     </File>
     <File Include="bin/ASECATTICA.dll">
-      <publishTime>02/25/2021 12:09:56</publishTime>
+      <publishTime>03/09/2021 15:23:25</publishTime>
     </File>
     <File Include="bin/ASECATTICA.pdb">
-      <publishTime>02/25/2021 12:09:56</publishTime>
+      <publishTime>03/09/2021 15:23:25</publishTime>
     </File>
     <File Include="bin/Datos.dll">
-      <publishTime>02/25/2021 12:09:50</publishTime>
+      <publishTime>03/09/2021 15:23:19</publishTime>
     </File>
     <File Include="bin/Datos.dll.config">
       <publishTime>11/09/2020 15:58:27</publishTime>
     </File>
     <File Include="bin/Datos.pdb">
-      <publishTime>02/25/2021 12:09:50</publishTime>
+      <publishTime>03/09/2021 15:23:19</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>09/05/2018 16:10:50</publishTime>
     </File>
     <File Include="bin/Negocio.dll">
-      <publishTime>02/25/2021 12:09:51</publishTime>
+      <publishTime>03/09/2021 15:23:21</publishTime>
     </File>
     <File Include="bin/Negocio.dll.config">
       <publishTime>11/09/2020 15:58:27</publishTime>
     </File>
     <File Include="bin/Negocio.pdb">
-      <publishTime>02/25/2021 12:09:51</publishTime>
+      <publishTime>03/09/2021 15:23:21</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>08/08/2018 05:38:48</publishTime>
@@ -287,19 +347,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>11/07/2020 15:09:22</publishTime>
     </File>
     <File Include="Contrasenia.aspx">
-      <publishTime>02/25/2021 11:25:04</publishTime>
+      <publishTime>03/09/2021 15:01:45</publishTime>
+    </File>
+    <File Include="css/styles.css">
+      <publishTime>03/08/2021 18:04:03</publishTime>
+    </File>
+    <File Include="css/stylesborrar.css">
+      <publishTime>02/22/2021 09:39:07</publishTime>
+    </File>
+    <File Include="css/stylesIndex.css">
+      <publishTime>02/24/2021 11:30:57</publishTime>
     </File>
     <File Include="Default.aspx">
       <publishTime>11/07/2020 15:16:30</publishTime>
     </File>
     <File Include="Index.aspx">
-      <publishTime>02/24/2021 11:49:54</publishTime>
+      <publishTime>03/09/2021 15:22:24</publishTime>
+    </File>
+    <File Include="js/scripts.js">
+      <publishTime>11/07/2020 15:09:22</publishTime>
+    </File>
+    <File Include="js/scriptsIndex.js">
+      <publishTime>11/03/2020 13:49:46</publishTime>
     </File>
     <File Include="Login.aspx">
-      <publishTime>02/25/2021 11:22:36</publishTime>
+      <publishTime>02/26/2021 17:07:21</publishTime>
     </File>
     <File Include="RecuperarContrasenia.aspx">
-      <publishTime>11/19/2020 18:29:56</publishTime>
+      <publishTime>03/09/2021 14:50:47</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>09/02/2020 09:19:56</publishTime>

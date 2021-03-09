@@ -13,31 +13,23 @@
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="bg-primary sb-sidenav-toggled h-100">
+    <body class="bg-primary sb-sidenav-toggled">
 
             <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
      
-      <a class="navbar-brand" href="#page-top">Asecattica</a>
+      <a class="navbar-brand" href="Index.aspx">Asecattica</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link " href="#page-top">Inicio
+            <a class="nav-link " href="Index.aspx">Inicio
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#quienesSomos">Quiénes Somos</a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
           </li>
         </ul>
       </div>
@@ -48,13 +40,14 @@
             <div class="bg-light" id="layoutAuthentication_content" style="margin-top:100px;">
                 <main>
                     
-                    <div class="container h-100">
-                        <div class="row justify-content-center h-100">
-                            <div class="col-lg-5 h-100 align-self-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 align-self-center">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar sesión</h3></div>
                                     <div class="card-body">
 
+                  
                                         <form runat="server">
 <!--*****************************
     AL INICIAR EL FORM AGREGAR:-->
@@ -74,12 +67,7 @@
                                                 <%--<input class="form-control py-4" id="inputContrasenia" type="password" placeholder="Ingrese la contraseña" />--%>
                                                 <asp:TextBox class="form-control py-4" ID="TxtClave" runat="server" TextMode="Password"></asp:TextBox>
                                             </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                    <label class="custom-control-label" for="rememberPasswordCheck">Recordar contraseña</label>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="contrasenia.aspx">¿Olvidó su contraseña?</a>
                                                 <%--<a class="btn btn-primary" href="Administrador.html">Ingresar</a>--%>

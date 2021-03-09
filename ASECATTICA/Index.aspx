@@ -53,10 +53,12 @@
             <li class="nav-item">
             <a class="nav-link" href="#contacto">Contacto</a>
           </li>
+            <%-- LOGIN --%>
               <li>
-            
-                  <asp:Button class=" text-uppercase font-weight-bold bg-dark text-white" style=" padding: 0.5rem 1rem;" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
-
+                  <asp:Button class=" text-uppercase font-weight-bold bg-dark text-white" style=" padding: 0.5rem; border:none;" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
+              <a href="Login.aspx">
+                      <asp:Image ID="Imglogin" runat="server" ImageUrl="assets/img/login.png" Height="25px"/>
+                  </a>
               </li>
             
         </ul>
@@ -66,7 +68,7 @@
               <%--  <main>--%>
           
                 <!-- Header-->         
-<header class="bg-primary py-5" style="background-image:url(assets/img/header-cafe-2-bg.jpg);" >
+<header class="bg-primary py-5" style="background-image:url(assets/img/header-cafe-2-bg.jpg); background-color:dimgray;" >
     <div class="container h-100 ">
         <div class="row h-100 align-items-center">
         <div class="col-lg-12">

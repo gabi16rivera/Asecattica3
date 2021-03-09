@@ -114,3 +114,4 @@ C:\Users\Gaby\source\repos\Asecattica3\Datos\obj\Debug\Datos.csproj.CoreCompileI
 C:\Users\Gaby\source\repos\Asecattica3\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\Gaby\source\repos\Asecattica3\Datos\obj\Debug\Datos.dll
 C:\Users\Gaby\source\repos\Asecattica3\Datos\obj\Debug\Datos.pdb
+C:\Users\Gaby\source\repos\Asecattica3\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

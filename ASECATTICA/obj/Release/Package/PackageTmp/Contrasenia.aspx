@@ -19,25 +19,16 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
      
-      <a class="navbar-brand" href="#page-top">Asecattica</a>
+      <a class="navbar-brand" href="Index.aspx">Asecattica</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link " href="#page-top">Inicio
+            <a class="nav-link " href="Index.aspx">Inicio
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#quienesSomos">Quiénes Somos</a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
           </li>
         </ul>
       </div>
@@ -74,7 +65,7 @@
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <a class="small" href="Login.aspx">Regresar a iniciar sesión</a>
                                                <%-- <a class="btn btn-primary" href="login.html">Restablecer la contraseña</a>--%>
-                                                <asp:Button class="btn btn-primary" ID="BtnRestablecerContrasenia" runat="server" Text="Restablecer contraseña" OnClick="BtnRestablecerContrasenia_Click"/>
+                                                <asp:Button class="btn btn-primary btn-dark" ID="BtnRestablecerContrasenia" runat="server" Text="Restablecer contraseña" OnClick="BtnRestablecerContrasenia_Click"/>
                                             </div>
  <!-- ----------------------------------- -->
   <!-- Bootstrap Modal Dialog: FINALIZAR -->
@@ -124,18 +115,13 @@
                 </main>
             </div>
             <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+               
+                     <!-- Copyright -->  
+    <div class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+    </div>
+  </div>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

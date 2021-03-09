@@ -25,12 +25,15 @@
 
 </head>
 <body class="sb-sidenav-toggled" id="page-top">
-     
+     <form runat="server">
+
+
+  
     <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
      
-      <a class="navbar-brand" href="#page-top">Asecattica</a>
+      <a class="navbar-brand" href="Index.aspx">Asecattica</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,6 +53,14 @@
             <li class="nav-item">
             <a class="nav-link" href="#contacto">Contacto</a>
           </li>
+            <%-- LOGIN --%>
+              <li>
+                  <asp:Button class=" text-uppercase font-weight-bold bg-dark text-white" style=" padding: 0.5rem; border:none;" ID="BtnIngresar" runat="server" Text="Ingresar" OnClick="BtnIngresar_Click" />
+              <a href="Login.aspx">
+                      <asp:Image ID="Imglogin" runat="server" ImageUrl="assets/img/login.png" Height="25px"/>
+                  </a>
+              </li>
+            
         </ul>
       </div>
     </div>
@@ -63,10 +74,7 @@
         <div class="col-lg-12">
           <h1 class="display-4 text-white mt-5 mb-2" style="font-weight:600; text-shadow: -3px -3px 3px #343a40;">Business Name or Tagline</h1>
           <p class="lead mb-5 text-white" style="text-shadow: -3px -3px 3px #343a40;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
-            <div class="text-center"">
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger bg-dark" style="border-color:#343a40; font-size:xx-large; "  href="Login.aspx">Logearse</a>
-            </div>
-        </div>
+         </div>
       </div>
     </div>
   </header>
@@ -123,10 +131,10 @@
         </section>
 
     <!-- Footer-->
-        <footer class="footer text-center">
+        <section class="page-section py-5 text-center" id="contacto">
             <div class="container page-section ">
                 <div class="row">
-                    <!-- Footer Location-->
+                    <!-- Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="text-uppercase mb-4">Dirección</h2>
                         <p class="lead mb-0">
@@ -134,7 +142,7 @@
                             
                         </p>
                     </div>
-                    <!-- Footer Tel-->
+                    <!-- Tel-->
                     <div class="col-lg-4">
                         <h2 class="text-uppercase mb-4">Teléfono</h2>
                         <p class="lead mb-0">
@@ -142,7 +150,7 @@
                         </p>
                     </div>
 
-                    <!-- Footer Email-->
+                    <!-- Email-->
                     <div class="col-lg-4">
                         <h2 class="text-uppercase mb-4">Correo</h2>
                         <p class="lead mb-0">
@@ -152,14 +160,15 @@
 
                 </div>
             </div>
-        </footer>
+        </section>
+
 
      <!-- Copyright -->  
-    <div class="py-5 bg-dark">
+    <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
     </div>
-  </div>
+  </footer>
     
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -168,6 +177,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scriptsIndex.js"></script>
-            
+               </form>
     </body>
 </html>
