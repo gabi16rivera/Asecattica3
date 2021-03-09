@@ -79,7 +79,7 @@ namespace ASECATTICA
             smtp.Port = 587;
             smtp.EnableSsl = true;
             smtp.UseDefaultCredentials =false;
-            smtp.Credentials = new NetworkCredential("gabi16rivera@gmail.com", "Gaby.160491");
+            smtp.Credentials = new NetworkCredential("gabi16rivera@gmail.com", "qwrt.160491");
 
             try
             {

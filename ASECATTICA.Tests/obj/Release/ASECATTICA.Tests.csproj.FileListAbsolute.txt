@@ -1,0 +1,2 @@
+C:\Users\Gaby\source\repos\Asecattica3\ASECATTICA.Tests\obj\Release\ASECATTICA.Tests.csprojAssemblyReference.cache
+C:\Users\Gaby\source\repos\Asecattica3\ASECATTICA.Tests\obj\Release\ASECATTICA.Tests.csproj.CoreCompileInputs.cache

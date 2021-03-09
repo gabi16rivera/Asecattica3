@@ -692,5 +692,10 @@ namespace ASECATTICA
             }
 
         }//fin DropDownListEstado_SelectedIndexChanged
+
+        protected void BtnAtrás_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AdmUsu.aspx");
+        }
     }
 }

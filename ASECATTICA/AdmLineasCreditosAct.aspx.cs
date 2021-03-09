@@ -29,6 +29,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
+                    BtnAtrás.Visible = true;
                     TxtCodigoLineaCredito.Attributes["disabled"] = "disabled";
                     MostrarLineasCreditos();
 
@@ -42,7 +43,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = false;
                     BtnEliminar.Visible = false;
                     BtnAgregar.Visible = true;
-
+                    BtnAtrás.Visible = true;
 
                 }
 
@@ -316,6 +317,9 @@ namespace ASECATTICA
             }//fin session actualizar
         }
 
-       
+        protected void BtnAtrás_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AdmLineasCreditos.aspx");
+        }
     }//fin AdmLineasCreditosAct
 }//fin namespace

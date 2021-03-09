@@ -27,6 +27,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = true;
                     BtnEliminar.Visible = true;
                     BtnAgregar.Visible = false;
+                    BtnAtrás.Visible = true;
                     TxtCodigo.Attributes["disabled"] = "disabled";
                     MostrarAsientos();
                 }
@@ -37,6 +38,7 @@ namespace ASECATTICA
                     BtnActualizar.Visible = false;
                     BtnEliminar.Visible = false;
                     BtnAgregar.Visible = true;
+                    BtnAtrás.Visible = true;
                 }
 
             }
@@ -271,5 +273,9 @@ namespace ASECATTICA
 
         }//fin limpiarForm
 
+        protected void BtnAtrás_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AdmAsientos.aspx");
+        }
     }
 }

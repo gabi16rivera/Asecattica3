@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - SB Admin</title>
+    <title>AdminUbicacion</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
@@ -36,8 +36,6 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Perfil</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Login.aspx">Salir</a>
                     </div>
                 </li>
@@ -51,7 +49,7 @@
                             <%--<div class="sb-sidenav-menu-heading">Core</div>--%>
                             <a class="nav-link" href="Administrador.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                Inicio
                             </a>
                             <form runat="server"> 
                             
@@ -68,22 +66,22 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Centro de Costos
                             </a>
-                            <a class="nav-link collapsed" href="AdmCreditosUsu.aspx">
+                            <%--<a class="nav-link collapsed" href="AdmCreditosUsu.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Crédito de Usuarios
                             </a>
                             <a class="nav-link collapsed" href="AdmCuentas.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Cuentas
-                            </a>
+                            </a>--%>
                             <a class="nav-link collapsed" href="AdmEstados.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Estados
                             </a>
-                            <a class="nav-link collapsed" href="AdmOperacionesUsu.aspx">
+                            <%--<a class="nav-link collapsed" href="AdmOperacionesUsu.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Operaciones de Usuarios
-                            </a>
+                            </a>--%>
                             <a class="nav-link collapsed" href="AdmRoles.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Roles
@@ -114,12 +112,12 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Ubicación</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">En esta sección cree o seleccione la ubicación que considere necesario</li>
                         </ol>
                         <div class="row table table-responsive"> 
-                            <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Ajuste" OnClick="BtnNuevo_Click" />
+                            <asp:Button ID="BtnNuevo" class="breadcrumb-item" runat="server" Text="Agregar Ubicación" OnClick="BtnNuevo_Click" />
                             
                         <asp:GridView ID="GvUbicacion" runat="server" AutoGenerateColumns="False" DataSourceID="DsUbicacion" ViewStateMode="Enabled" ValidateRequestMode="Enabled" CellPadding="4" ForeColor="#333333" GridLines="None" Width="100%" OnSelectedIndexChanged="GvUbicacion_SelectedIndexChanged">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

@@ -2527,7 +2527,18 @@ fieldset:disabled a.btn {
 .btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(130, 138, 145, 0.5);
 }
+.btn-login {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+  padding: 0.5rem 1rem;
+}
 
+.btn-login:hover {
+  color: #fff;
+  background-color: #5a6268;
+  border-color: #545b62;
+}
 .btn-success {
   color: #fff;
   background-color: #28a745;
@@ -10030,15 +10041,12 @@ body {
 
 #layoutAuthentication {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   min-height: 100vh;
 }
 #layoutAuthentication #layoutAuthentication_content {
   min-width: 0;
   flex-grow: 1;
-  width: 450px;
 }
 #layoutAuthentication #layoutAuthentication_footer {
   min-width: 0;
@@ -10092,13 +10100,13 @@ body {
   }
 
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
-    transform: translateX(-225px);
+    transform: translateX(0px);
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
-    margin-left: -225px;
+    margin-left: 0px;
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
-    display: none;
+    display: block;
   }
 }
 .sb-nav-fixed .sb-topnav {
