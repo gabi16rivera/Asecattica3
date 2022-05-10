@@ -68,12 +68,12 @@
               <%--  <main>--%>
           
                 <!-- Header-->         
-<header class="bg-primary py-5" style="background-image:url(assets/img/header-cafe-2-bg.jpg); background-color:dimgray;" >
+<header class="bg-primary py-5" style="background-image:url(assets/img/header-cafe-bg.jpg); background-color:dimgray;" >
     <div class="container h-100 ">
         <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2" style="font-weight:600; text-shadow: -3px -3px 3px #343a40;">Business Name or Tagline</h1>
-          <p class="lead mb-5 text-white" style="text-shadow: -3px -3px 3px #343a40;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+          <h1 class="display-4 text-white mt-5 mb-2" style="font-weight:600; text-shadow: -3px -3px 3px #343a40;">ASECATTICA</h1>
+          <p class="lead mb-5 text-white" style="text-shadow: -3px -3px 3px #343a40;">Asociación solidarista de empleados de CATTICA, enfocada en el apoyo y ayuda social en beneficio de todos.</p>
          </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
                 <div class="row text-center">
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
+                            <img class="img-fluid" src="assets/img/portfolio/ahorro.jpg" alt="" />
                         </span>
 
                         <h4 class="my-3">Ahorro</h4>
@@ -98,16 +98,16 @@
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                            <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
+                            <img class="img-fluid" src="assets/img/portfolio/credito.jpg" alt="" />
                         </span>
                         <h4 class="my-3">Crédito</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                     <div class="col-md-4">
                         <span class="fa-stack fa-4x">
-                             <img class="img-fluid" src="assets/img/portfolio/02-thumbnail.jpg" alt="" />
+                             <img class="img-fluid" src="assets/img/portfolio/ayuda.jpg" alt="" />
                         </span>
-                        <h4 class="my-3">Equipo fútbol</h4>
+                        <h4 class="my-3">Apoyos</h4>
                         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
                     </div>
                 </div>
@@ -136,25 +136,25 @@
                 <div class="row">
                     <!-- Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h2 class="text-uppercase mb-4">Dirección</h2>
+                        <h2 class="mb-4">Dirección</h2>
                         <p class="lead mb-0">
-                            Frailes Bustamente.
+                            San José, Costa Rica
                             
                         </p>
                     </div>
                     <!-- Tel-->
                     <div class="col-lg-4">
-                        <h2 class="text-uppercase mb-4">Teléfono</h2>
+                        <h2 class="mb-4">Teléfono</h2>
                         <p class="lead mb-0">
-                             2222-2222
+                             2544-0144
                         </p>
                     </div>
 
                     <!-- Email-->
                     <div class="col-lg-4">
-                        <h2 class="text-uppercase mb-4">Correo</h2>
+                        <h2 class="mb-4">Correo</h2>
                         <p class="lead mb-0">
-                             <a href="mailto:#">asecattica@cattica.com</a>
+                             <a href="mailto:#">consultas@asecattica.com</a>
                         </p>
                     </div>
 
@@ -166,7 +166,7 @@
      <!-- Copyright -->  
     <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+      <p class="m-0 text-center text-white">Derechos reservados © ASECATTICA 2022</p>
     </div>
   </footer>
     

@@ -39,10 +39,15 @@ namespace ASECATTICA
             rol = verificaRol.Rows[0]["Rol"].ToString();
             Session["rol"] = rol;
 
-            if (retornoID == 1)
+            if (rol == "Administrador")
             {
                 //Response.Redirect("Administrador.aspx?Rol=" + rol);
                 Response.Redirect("Administrador.aspx");
+            }
+            if (rol == "Asociado")
+            {
+                //Response.Redirect("Administrador.aspx?Rol=" + rol);
+                Response.Redirect("Asociado.aspx");
             }
             else {
                 //mensaje de usuario o contraseña incorrecta

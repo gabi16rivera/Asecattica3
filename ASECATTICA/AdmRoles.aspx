@@ -124,7 +124,7 @@
                         <EmptyDataTemplate>No hay información</EmptyDataTemplate>
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="Codigo" HeaderText="Codigo" SortExpression="Codigo" />
+                            <asp:BoundField DataField="CodigoRoles" HeaderText="Codigo" SortExpression="Codigo" />
                             <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                             <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                         </Columns>
@@ -142,7 +142,7 @@
                     
                                <asp:SqlDataSource ID="DsRoles" runat="server" ConnectionString="<%$ ConnectionStrings:bdAsecatticaConnectionString %>" SelectCommand="sp_crud_TBRoles" SelectCommandType="StoredProcedure">
                                    <SelectParameters>
-                                       <asp:Parameter DefaultValue="0" Name="Codigo" Type="String" />
+                                       <asp:Parameter DefaultValue="0" Name="CodigoRoles" Type="String" />
                                        <asp:Parameter DefaultValue="0" Name="Nombre" Type="String" />
                                        <asp:Parameter DefaultValue="0" Name="Descripcion" Type="String" />
                                        <asp:Parameter DefaultValue="Select" Name="choice" Type="String" />
