@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsociadoEstadoCuenta.aspx.cs" Inherits="ASECATTICA.AsociadoEstadoCuenta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AsociadoConsultas.aspx.cs" Inherits="ASECATTICA.AsociadoConsultas" %>
 
 <!DOCTYPE html>
 
@@ -15,15 +15,12 @@
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
-
 <%--<body class="sb-sidenav-toggled">--%>
 <body class="sb-sidenav">
 
+
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Asecattica</a>
-
-
-
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -39,6 +36,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="AsociadoPerfil.aspx">Perfil</a>
                     <a class="dropdown-item" href="Index.aspx">Salir</a>
                 </div>
             </li>
@@ -236,168 +234,58 @@
             </nav>
         </div>
 
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
-                    <div class="float-right">
-                        <button id="btnCertificadoEsp" type="button" class="btn btn-success image-btn" data-toggle="modal" data-target="#imgModal" title="Descargar ">
-                            <i class="fas fa-file-archive fa-1x"></i><span>Descargar</span>
-
-                        </button>
-
-                    </div>
-                    <h1 class="mt-4">Estado de cuenta</h1>
+                    <h1 class="mt-4">Consultas</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">En esta sección podrá observar datos estadísticos de la ASECATTICA</li>
+                        <li class="breadcrumb-item active">En esta sección podrá enviarnos sus consultas a la ASECATTICA</li>
                     </ol>
                     <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10">
-                            <div id="EstadoDeCuenta" class="card mb-12">
-                                <div class="card-header bg-dark text-white text-center">
-                                    <h1>ASECATTICA</h1>
-                                    <%--<i class="fas fa-chart-area mr-1"></i>--%>
-                                        Estado de cuenta
-                                </div>
-                                <div class="card-body">
-                                    <%--DATOS PERSONALES--%>
-                                    <div class="row">
-                                        <div class="col-3"><b>Socio N°</b></div>
-                                        <div class="col-9">000</div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <form class="form-horizontal" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="fname" name="name" type="text" placeholder="Nombre completo" value="APELLIDO APELLIDO NOMBRE" class="form-control" disabled>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-3"><b>Nombre</b></div>
-                                        <div class="col-9">APELLIDO APELLIDO NOMBRE</div>
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="email" name="email" type="text" placeholder="Correo electrónico" value="correo@dominio.com" class="form-control" disabled>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-3"><b>Cédula</b></div>
-                                        <div class="col-9">0000000000</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3"><b>Correo electrónico</b></div>
-                                        <div class="col-9">correo@dominio.com</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-3"><b>Saldos al </b></div>
-                                        <div class="col-9">31/05/2022</div>
-                                    </div>
-                                    <div class="row">
-                                        <hr />
-                                    </div>
-                                    <%--CRÉDITOS--%>
-                                    <div class="row bg-dark text-white text-center">
-                                        <div class="mb-3"><b>CRÉDITOS</b></div>
-                                        <div class="mb-9"></div>
-                                    </div>
-                                    <div class="row">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr class="bg-dark text-white">
-                                                    <th scope="col">Crédito</th>
-                                                    <th scope="col">Monto</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">Aporte Patronal</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Aporte Personal</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Aporte en Custodia</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Ahorro Escolar</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Ahorro Navideño</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Excedentes</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <br />
-                                    <%--DÉBITOS--%>
-                                    <div class="row bg-dark text-white text-center">
-                                        <div class="mb-3"><b>DÉBITOS</b></div>
-                                        <div class="mb-9"></div>
-                                    </div>
-                                    <div class="row">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr class="bg-dark text-white">
-                                                    <th scope="col"><a href="AsociadoDetalleDebito.aspx">Préstamo personal</a></th>
-                                                    <th scope="col">Monto</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">Saldo Anterior</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Abono</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Interés</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Préstamo del mes</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Total</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <br />
-                                    <%--DÉBITOS--%>
-                                    <div class="row bg-dark text-white text-center">
-                                        <div class="mb-3"><b>DISPONIBLES</b></div>
-                                        <div class="mb-9"></div>
-                                    </div>
-                                    <div class="row">
-                                        <table class="table table-hover">
-                                            <thead>
-                                                <tr class="bg-dark text-white">
-                                                    <th scope="col">Tipo</th>
-                                                    <th scope="col">Monto</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">Aumento de crédito</th>
-                                                    <td>₡ 000.000,00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <br />
-                                </div>
-                                <%--FOOTER--%>
-                                <div class="card-header bg-dark text-white text-center">
-                                    <div class="mb-12"><b>ASECATTICA | San José, Costa Rica</b></div>
-                                    <div class="mb-12"><b>Tel.: 2544-0144 | consultas@asecattica.com</b></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1"></div>
-                    </div>
 
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <input id="phone" name="phone" type="text" placeholder="Teléfono" value="8888-8888" class="form-control" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-columns bigicon"></i></span>
+                                        <div class="col-md-12">
+                                            <textarea class="form-control" id="message" name="message" placeholder="Por favor escriba su mensaje en este espacio." rows="7"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-12 text-center">
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Enviar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
@@ -414,6 +302,29 @@
             </footer>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Mensaje</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Acción realizada con éxito
+                </div>
+                <div class="modal-footer">
+                    <%--<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--%>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
@@ -426,21 +337,4 @@
 </body>
 </html>
 
-
-
-<%--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>--%>
-
-<script type="text/javascript">
-    $("#btnCertificadoEsp").on("click", function () {
-        var divContents = $("#EstadoDeCuenta").html();
-        var printWindow = window.open('', '', 'height=400,width=800');
-        printWindow.document.write('<html>')
-        printWindow.document.write('<head><style type="text/css" media="print">@@page { margin: 0; size: landscape; }</style><link href="css/styles.css" rel="stylesheet" /><link href="Content/bootstrap.min.css" rel="stylesheet" /><title>Estado de Cuenta</title></head>')
-        printWindow.document.write('<body>');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-    });
-</script>
 

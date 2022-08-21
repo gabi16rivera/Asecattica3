@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>AdminUsuAct</title>
+        <title>ASECATTICA</title>
         <link href="css/styles.css" rel="stylesheet" />
 
     <%-- Hace que aparezca el menú desplegable de la página --%>
@@ -24,7 +24,7 @@
       
 
 </head>
-<body class="sb-sidenav-toggled">
+<body class="sb-sidenav">
          
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="#">Asecattica</a>

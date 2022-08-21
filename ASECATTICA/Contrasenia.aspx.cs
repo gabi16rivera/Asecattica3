@@ -30,7 +30,7 @@ namespace ASECATTICA
             if (retornoID == 1)
             {
                 tabla = objetoDTO.ValidarCorreoUsu(TxtCedula.Text);
-                string correoUsuario = tabla.Rows[0]["Correo"].ToString();
+                string correoUsuario = tabla.Rows[2]["Correo"].ToString();
                 string cedulaUsuario = tabla.Rows[0]["Cedula"].ToString();
                 EnviarCorreo(System.Convert.ToString(correoUsuario), "Correo electrónico enviado", "Recuperación de contraseña",
                 "Se le ha enviado un correo a " + correoUsuario + ". En el comunicado encontrará las instrucciones para hacer" +

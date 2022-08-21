@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Administración</title>
+    <title>ASECATTICA</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
-<body class="sb-sidenav-toggled">
 
-
+<%--<body class="sb-sidenav-toggled">--%>
+<body class="sb-sidenav">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Asecattica</a>
 
@@ -44,17 +44,18 @@
         </ul>
     </nav>
     <div id="layoutSidenav">
+
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
 
                     <div class="nav">
                         <%--<div class="sb-sidenav-menu-heading">Core</div>--%>
-                        <a class="nav-link" href="Administrador.aspx">
+                        <a class="nav-link" href="Asociado.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Inicio
                         </a>
-                        <div class="sb-sidenav-menu-heading">ASOCIADO</div>
+
 
                         <%-- BLOQUE DE OPCIONES PARA EL ADMINISTRADOR --%>
                         <% 
@@ -64,7 +65,7 @@
                             if (rol.Contains("Administrador"))
                             {
                         %>
-
+                        <div class="sb-sidenav-menu-heading">Administración</div>
                         <a class="nav-link collapsed" href="AdmAjustes.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Ajustes
@@ -117,11 +118,37 @@
                         <% 
                             if (rol.Contains("Asociado"))
                             {%>
-
-
+                        <div class="sb-sidenav-menu-heading">Estados</div>
                         <a class="nav-link collapsed" href="AsociadoEstadoCuenta.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Estado de cuenta
+                        </a>
+                        <a class="nav-link collapsed" href="AsociadoEstadosFinancieros.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Estados Financieros
+                        </a>
+
+                        <a class="nav-link collapsed" href="AsociadoInformes.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-bar"></i></div>
+                            Informes
+                        </a>
+
+                        <div class="sb-sidenav-menu-heading">Solicitudes</div>
+                        <a class="nav-link collapsed" href="AsociadoSolicitudCredito.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Solicitud de crédito
+                        </a>
+                        <a class="nav-link collapsed" href="AsociadoCuotas.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-angle-right"></i></div>
+                            Cambio de cuota
+                        </a>
+                        <a class="nav-link collapsed" href="AsociadoBeneficiarios.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Beneficiarios
+                        </a>
+                        <a class="nav-link collapsed" href="AsociadoConsultas.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                            Consultas
                         </a>
 
                         <%  }%>
@@ -201,26 +228,27 @@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logeado con rol:</div>
-                    <%--Administrador--%>
-                    <%LblLogueado.Text = rol;%>
-                    <asp:Label ID="LblLogueado" runat="server" Text="Label"></asp:Label>
+                    <div class="small">
+                        Rol: <%LblLogueado.Text = rol;%>
+                        <asp:Label ID="LblLogueado" runat="server" Text="Label"></asp:Label>
+                    </div>
                 </div>
             </nav>
         </div>
+
 
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
                     <div class="row float-right">
-                    <div class="float-right"><a href="AsociadoEstadoCuenta.aspx" class="btn btn-success">Regresar</a></div>
-                    <div class="float-right"><a href="AsociadoEstadoCuenta.aspx" class="btn btn-success">Imprimir</a></div>
+                        <div class="float-right"><a href="AsociadoEstadoCuenta.aspx" class="btn btn-success">Regresar</a></div>
+                        <div class="float-right"><a href="AsociadoEstadoCuenta.aspx" class="btn btn-success">Imprimir</a></div>
                     </div>
                     <h1 class="mt-4">Detalle de débito</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">En esta sección podrá observar datos referentes a sus débitos en detalle.</li>
                     </ol>
-                        <div class="row">
+                    <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                             <div class="card mb-12" id="DebitosAsociado">
@@ -255,7 +283,7 @@
                                         <hr />
                                     </div>
                                     <br />
-                                    <%--DETALLE DE DÉBITOS--%>                                    
+                                    <%--DETALLE DE DÉBITOS--%>
                                     <div class="row bg-dark text-white text-center">
                                         <div class="mb-3"><b>DÉBITOS</b></div>
                                         <div class="mb-9"></div>
@@ -367,11 +395,11 @@
                                     <br />
                                     <br />
                                 </div>
-                                    <%--FOOTER--%>
-                                    <div class="card-header bg-dark text-white text-center">
-                                        <div class="mb-12"><b>ASECATTICA | San José, Costa Rica</b></div>
-                                        <div class="mb-12"><b>Tel.: 2544-0144 | consultas@asecattica.com</b></div>
-                                    </div>
+                                <%--FOOTER--%>
+                                <div class="card-header bg-dark text-white text-center">
+                                    <div class="mb-12"><b>ASECATTICA | San José, Costa Rica</b></div>
+                                    <div class="mb-12"><b>Tel.: 2544-0144 | consultas@asecattica.com</b></div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
@@ -382,11 +410,11 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                        <div class="text-muted">Derechos reservados &copy; ASECATTICA 2022</div>
                         <div>
-                            <a href="#">Privacy Policy</a>
+                            <a href="#">Derechos reservados</a>
                             &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href="#">Términos &amp; Condiciones</a>
                         </div>
                     </div>
                 </div>

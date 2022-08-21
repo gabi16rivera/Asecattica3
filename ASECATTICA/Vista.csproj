@@ -78,6 +78,13 @@
     <Content Include="AdmCreditosUsu.aspx" />
     <Content Include="AdmCuentas.aspx" />
     <Content Include="AdmEstados.aspx" />
+    <Content Include="AsociadoConsultas.aspx" />
+    <Content Include="AsociadoPerfil.aspx" />
+    <Content Include="AsociadoBeneficiarios.aspx" />
+    <Content Include="AsociadoCuotas.aspx" />
+    <Content Include="AsociadoSolicitudCredito.aspx" />
+    <Content Include="AsociadoInformes.aspx" />
+    <Content Include="AsociadoEstadosFinancieros.aspx" />
     <Content Include="AsociadoDetalleDebito.aspx" />
     <Content Include="AsociadoEstadoCuenta.aspx" />
     <Content Include="Asociado.aspx" />
@@ -157,6 +164,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="docs\Informe.pdf" />
     <None Include="Properties\PublishProfiles\PUBLICACIÓN.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -264,6 +272,55 @@
     </Compile>
     <Compile Include="AdmAsientosAct.aspx.designer.cs">
       <DependentUpon>AdmAsientosAct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoConsultas.aspx.cs">
+      <DependentUpon>AsociadoConsultas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoConsultas.aspx.designer.cs">
+      <DependentUpon>AsociadoConsultas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoPerfil.aspx.cs">
+      <DependentUpon>AsociadoPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoPerfil.aspx.designer.cs">
+      <DependentUpon>AsociadoPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoBeneficiarios.aspx.cs">
+      <DependentUpon>AsociadoBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoBeneficiarios.aspx.designer.cs">
+      <DependentUpon>AsociadoBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoCuotas.aspx.cs">
+      <DependentUpon>AsociadoCuotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoCuotas.aspx.designer.cs">
+      <DependentUpon>AsociadoCuotas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoSolicitudCredito.aspx.cs">
+      <DependentUpon>AsociadoSolicitudCredito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoSolicitudCredito.aspx.designer.cs">
+      <DependentUpon>AsociadoSolicitudCredito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoInformes.aspx.cs">
+      <DependentUpon>AsociadoInformes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoInformes.aspx.designer.cs">
+      <DependentUpon>AsociadoInformes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AsociadoEstadosFinancieros.aspx.cs">
+      <DependentUpon>AsociadoEstadosFinancieros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsociadoEstadosFinancieros.aspx.designer.cs">
+      <DependentUpon>AsociadoEstadosFinancieros.aspx</DependentUpon>
     </Compile>
     <Compile Include="AsociadoDetalleDebito.aspx.cs">
       <DependentUpon>AsociadoDetalleDebito.aspx</DependentUpon>

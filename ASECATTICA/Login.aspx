@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Ingresar</title>
+        <title>ASECATTICA</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -25,12 +25,23 @@
 
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link " href="Index.aspx">Inicio
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+        <ul class="navbar-nav ml-auto">          
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.aspx#page-top">Inicio<span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.aspx#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.aspx#quienesSomos">Quiénes Somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Index.aspx#contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Login.aspx">Ingresar</a>
+                        </li>
         </ul>
       </div>
     </div>
@@ -42,7 +53,7 @@
                     
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5 align-self-center">
+                            <div class="col-lg-7 align-self-center">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar sesión</h3></div>
                                     <div class="card-body">
